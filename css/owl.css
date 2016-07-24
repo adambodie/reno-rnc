@@ -9,4 +9,21 @@
 #owl-demo .item h3 {
   background-color: black;
   margin: 0;
+  height: 66px;
+}
+.owl-item {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    color: #000;
+    margin: 20px;
+    padding: 6px 15px;
+    font-size: 24px;
+    background-image: linear-gradient(to bottom,#66B657 0,#81F092 100%);
+    filter: Alpha(Opacity=100);
+    opacity: 1;
+    font-family: 'Monoton', cursive;
 }

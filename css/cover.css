@@ -55,7 +55,7 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-.cover-heading {
+.cover-heading, #title {
   font-family: 'Monoton', cursive;
 }
 /* Padding for spacing */

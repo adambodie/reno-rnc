@@ -1,0 +1,11 @@
+    .slick-slide img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+    }
+    .slick-slide h2 {
+        margin-top: 10px;
+        font-family: 'Monoton', cursive;
+        color: #F14285;
+    }

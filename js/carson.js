@@ -31,4 +31,18 @@ function loadDoc5() {
   console.log( jqxhr.status ); // 200
   console.log( "Load was performed." );
 });
+
+    var title = "<h1>Part 5: A Brief Stop at the Capitol</h1>";
+    document.getElementById("title").innerHTML = title;
+    var paragraph = "<div class='container'><div class='row'>";
+    paragraph +="<div class='col-md-6 story'>";
+    paragraph +="<h1>My Story</h1>";
+    paragraph +="<p></p><p></p></div>";
+    paragraph +="<div class='col-md-6 story'>";
+    paragraph +="<h1>Facts about Carson City</h1>";
+    paragraph +="<p></p>";
+    paragraph +="<p></p>";
+    paragraph +="<p></p></div></div></div>";
+    document.getElementById("text").innerHTML = paragraph;
+  
 }

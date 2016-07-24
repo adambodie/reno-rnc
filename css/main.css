@@ -1,0 +1,9 @@
+.story p {
+    text-align: left;
+    color: #81F092;
+}
+
+button {
+    padding: 0;
+    border: none;
+}
