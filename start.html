@@ -30,14 +30,29 @@
      
     <!-- Default Theme -->
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">    
-    
-    
+        
     <link href="css/owl.css" rel="stylesheet">
+    
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <style>
+    .slick-slide img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+    }
+    .slick-slide h2 {
+        margin-top: 10px;
+        font-family: 'Monoton', cursive;
+        color: #F14285;
+    }
+  </style>
   </head>
   <body>
 
@@ -52,14 +67,11 @@
       </div>
     </div>
 
-      <div id="demo">
+      <div id="carousel"></div>
+      <div id="text"></div>
         <div class="container">
           <div class="row">
-            <div id="carousel">Hello Booger</div>
-          </div>
-          <div class="row">
             <div class="span12">
-
             <div id="owl-demo" class="owl-carousel">
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-weed.jpg" alt="Adam at Weed Store">
@@ -79,7 +91,7 @@
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-carson-city.jpg" alt="Adam at Carson City">
-                <button type="button" onclick="loadDoc();"><h3>Part 5: Carson City</h3></button>
+                <button type="button" onclick="loadDoc5();"><h3>Part 5: Carson City</h3></button>
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-tahoe-nv.jpg" alt="Adam at Lake Tahoe">
@@ -111,7 +123,8 @@
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-klamath-falls.jpg" alt="Adam at Klamath Falls">
-                <h3>Part 13: Klamath Falls</h3>
+                <button type="button" onclick="loadDoc13();"><h3>Part 13: Klamath Falls</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-saltcreek.jpg" alt="Adam at Salt Creek Falls">
@@ -125,19 +138,19 @@
 
     </div>
 
-    <div class="mastfoot">
-            <div class="inner">
-              <p>Adam Bodie &copy; 2016</p>
-            </div>
-          </div>
-
-
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
     <script src="js/owl-carousel.js"></script>
     <script src="js/owl.js"></script>
-    <script src="js/carson.js"></script>
+    
+    <script type="text/javascript" src="js/carson.js"></script>
+    <script type="text/javascript" src="js/klamath.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    
   </body>
 </html>

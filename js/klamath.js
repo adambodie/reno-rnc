@@ -1,4 +1,4 @@
-function loadDoc5() {
+function loadDoc13() {
   var xmlhttp;
   if (window.XMLHttpRequest){
     xmlhttp = new XMLHttpRequest();
@@ -11,7 +11,7 @@ function loadDoc5() {
       myFunction(jsonDoc);
     }
   };
-  xmlhttp.open("GET", "json/carson.json", true);
+  xmlhttp.open("GET", "json/klamath.json", true);
   xmlhttp.send();
   
   function myFunction(arr) {
@@ -31,4 +31,7 @@ function loadDoc5() {
   console.log( jqxhr.status ); // 200
   console.log( "Load was performed." );
 });
+  var paragraph = "<h1>Facts about Klamath Falls</h1>";
+  paragraph +="<p>Klamath Falls is home of Oregon Institute of Technology.</p>";
+  document.getElementById("text").innerHTML = paragraph;
 }
