@@ -56,7 +56,12 @@
       </div>
     </div>
 
-      <div id="carousel"><p>Welcome to Reno, Nice 'n' Cool.  I am proud to showcase my pictures from my trip to Reno and share with all of you my story of the trip.  To view the pictures, click on the links below.</p></div>
+      <div id="carousel">
+        <div class="container">
+            <p>Welcome to Reno, Nice 'n' Cool.  I am proud to showcase my pictures from my trip to Reno and share with all of you my story of the trip.  To view the pictures, click on the links below.  Before then, I'll start with my Prelude.</p>
+            <p>Driving through Oregon for about 5 hours was, as expected, quite typical and mundane.  Having seen essentially all of I-5 in Oregon, I knew mostly what to expect, and the weather was quite cloudy, with some rain from a little in Cottage Grove to quite a bit in Roseburg.  Once I reached Medford and Ashland, I saw some sun peeking through the clouds.  Not surprisingly, after heading up and down the rollercoaster that is known as Siskiyou Pass (the highest point along I-5), I was in California, and of course, the clouds virtually disappeared like that (a few scattered, but still, a different world).  Which brings us to Part 1: For the love of Mt. Shasta.</p>
+        </div>
+      </div>
       <div id="text"></div>
         <div class="container">
           <div class="row">
@@ -64,19 +69,23 @@
             <div id="owl-demo" class="owl-carousel">
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-weed.jpg" alt="Adam at Weed Store">
-                <h3>Part 1: Road to Mt. Shasta</h3>
+                <button type="button" onclick="loadDoc1();"><h3>Part 1: Road to Mt. Shasta</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-burney.jpg" alt="Adam at Burney Falls">
-                <h3>Part 2: Burney Falls</h3>
+                <button type="button" onclick="loadDoc2();"><h3>Part 2: Burney Falls</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-circus.jpg" alt="Adam at Circus Circus">
-                <h3>Part 3: My Room at Circus Circus</h3>
+                <button type="button" onclick="loadDoc3();"><h3>Part 3: My Room at Circus Circus</h3></button> 
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-reno.jpg" alt="Adam at Reno Arch">
-                <h3>Part 4: Exploring Reno</h3>
+                <button type="button" onclick="loadDoc4();"><h3>Part 4: Exploring Reno</h3></button>                
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-carson-city.jpg" alt="Adam at Carson City">
@@ -84,31 +93,36 @@
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-tahoe-nv.jpg" alt="Adam at Lake Tahoe">
-                <h3>Part 6: Lake Tahoe - Nevada</h3>
+                <button type="button" onclick="loadDoc6();"><h3>Part 6: Lake Tahoe - Nevada</h3></button>
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-stateline.jpg" alt="Adam at Stateline">
-                <h3>Part 7: Stateline, Nevada</h3>
+                <button type="button" onclick="loadDoc7();"><h3>Part 7: Stateline, Nevada</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-tahoe-ca.jpg" alt="Adam at Lake Tahoe">
-                <h3>Part 8: Lake Tahoe - California</h3>
+                <button type="button" onclick="loadDoc8();"><h3>Part 8: Lake Tahoe - California</h3></button>
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-slots.jpg" alt="Adam at a Slot Machine">
-                <h3>Part 9: Inside Circus Circus</h3>
+                <button type="button" onclick="loadDoc9();"><h3>Part 9: Inside Circus Circus</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-truckee.jpg" alt="Adam at Truckee Riverwalk">
-                <h3>Part 10: Truckee Riverwalk</h3>
+                <button type="button" onclick="loadDoc10();"><h3>Part 10: Truckee Riverwalk</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-atlantis.jpg" alt="Adam at Atlantis">
-                <h3>Part 11: The Rest of Reno</h3>
+                <button type="button" onclick="loadDoc11();"><h3>Part 11: The Rest of Reno</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-lava-bed.jpg" alt="Adam at Lava Beds NM">
-                <h3>Part 12: Lava Beds NM</h3>
+                <button type="button" onclick="loadDoc12();"><h3>Part 12: Lava Beds NM</h3></button>
+                
               </div>
               <div class="item" style="width: 200px">
                 <img class="lazyOwl" data-src="thumbnails/adam-klamath-falls.jpg" alt="Adam at Klamath Falls">
@@ -116,8 +130,8 @@
                 
               </div>
               <div class="item" style="width: 200px">
-                <img class="lazyOwl" data-src="thumbnails/adam-saltcreek.jpg" alt="Adam at Salt Creek Falls">
-                <h3>Part 14: Salt Creek Falls</h3>
+                <img class="lazyOwl" data-src="thumbnails/adam-saltcreek.jpg" alt="Adam at Salt Creek Falls">                
+                <button type="button" onclick="loadDoc14();"><h3>Part 14: Salt Creek Falls</h3></button>
               </div>              
             </div>
 
@@ -136,8 +150,20 @@
     <script src="js/owl-carousel.js"></script>
     <script src="js/owl.js"></script>
     
+    <script type="text/javascript" src="js/shasta.js"></script>
+    <script type="text/javascript" src="js/burney.js"></script>
+    <script type="text/javascript" src="js/hotel-room.js"></script>
+    <script type="text/javascript" src="js/explore-reno.js"></script> 
     <script type="text/javascript" src="js/carson.js"></script>
+    <script type="text/javascript" src="js/lake-tahoe-nv.js"></script>    
+    <script type="text/javascript" src="js/stateline.js"></script>
+    <script type="text/javascript" src="js/lake-tahoe-ca.js"></script>
+    <script type="text/javascript" src="js/inside-circus.js"></script>
+    <script type="text/javascript" src="js/truckee.js"></script>    
+    <script type="text/javascript" src="js/reno-final.js"></script>
+    <script type="text/javascript" src="js/lava-beds.js"></script>   
     <script type="text/javascript" src="js/klamath.js"></script>
+    <script type="text/javascript" src="js/salt-creek.js"></script>    
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
     
