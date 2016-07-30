@@ -1,35 +1,6 @@
 function loadDoc9() {
-  var xmlhttp;
-  if (window.XMLHttpRequest){
-    xmlhttp = new XMLHttpRequest();
-  } else {
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      jsonDoc = JSON.parse(xmlhttp.responseText);
-      myFunction(jsonDoc);
-    }
-  };
-  xmlhttp.open("GET", "json/inside-circus.json", true);
-  xmlhttp.send();
-  
-  function myFunction(arr) {
-    var txt = "<div class='container carousel-class'>";
-      for (var i = 0; i < arr.length; i++) {
-        txt += "<div>";
-        txt += "<h2>" + arr[i].title + "</h2>";
-        txt += "<img src='img/" + arr[i].name + ".jpg' class='img-responsive'>";
-        txt += "</div>";
-      }
-      txt += "</div>";
-      document.getElementById("carousel").innerHTML=txt;
-  }
-  $.getScript( "js/carousel-slick.js", function( data, textStatus, jqxhr ) {
-  console.log( data ); // Data returned
-  console.log( textStatus ); // Success
-  console.log( jqxhr.status ); // 200
-  console.log( "Load was performed." );
+    $.get("inside-circus.html", function(data) {
+  $("#carousel").html(data);
 });
 
     var title = "<h1>Part 9: My Cave for the Trip: Circus Circus</h1>";
