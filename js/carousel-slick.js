@@ -2,7 +2,7 @@
       $('.carousel-class').slick({
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         fade: true,
         cssEase: 'linear'
       });

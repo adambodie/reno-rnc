@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="main">
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,17 +43,13 @@
       <link rel="stylesheet" type="text/css" href="css/my-custom-slick.css"/>
       <link href="css/main.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="main">
 
 
     <div id="title">
-      <div class="container">
-        <div class="row">
-          <div class="cover-heading">
+          <div class="cover-heading jumbotron">
             <h1 id="title">Welcome to Reno, Nice 'n' Cool</h1>
           </div>
-        </div>
-      </div>
     </div>
 
       <div id="carousel">
@@ -67,71 +63,61 @@
           <div class="row">
             <div class="span12">
             <div id="owl-demo" class="owl-carousel">
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc1();">
                 <img class="lazyOwl" data-src="thumbnails/adam-weed.jpg" alt="Adam at Weed Store">
-                <button type="button" onclick="loadDoc1();"><h3>Part 1: Road to Mt. Shasta</h3></button>
-                
+                <h1>1</h1>
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc2();">
                 <img class="lazyOwl" data-src="thumbnails/adam-burney.jpg" alt="Adam at Burney Falls">
-                <button type="button" onclick="loadDoc2();"><h3>Part 2: Burney Falls</h3></button>
-                
+                <h1>2</h1>
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc3();">
                 <img class="lazyOwl" data-src="thumbnails/adam-circus.jpg" alt="Adam at Circus Circus">
-                <button type="button" onclick="loadDoc3();"><h3>Part 3: My Room at Circus Circus</h3></button> 
-                
+                <h1>3</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc4();">
                 <img class="lazyOwl" data-src="thumbnails/adam-reno.jpg" alt="Adam at Reno Arch">
-                <button type="button" onclick="loadDoc4();"><h3>Part 4: Exploring Reno</h3></button>                
-                
+                <h1>4</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc5();">
                 <img class="lazyOwl" data-src="thumbnails/adam-carson-city.jpg" alt="Adam at Carson City">
-                <button type="button" onclick="loadDoc5();"><h3>Part 5: Carson City</h3></button>
+                <h1>5</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc6();">
                 <img class="lazyOwl" data-src="thumbnails/adam-tahoe-nv.jpg" alt="Adam at Lake Tahoe">
-                <button type="button" onclick="loadDoc6();"><h3>Part 6: Lake Tahoe - Nevada</h3></button>
+                <h1>6</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc7();">
                 <img class="lazyOwl" data-src="thumbnails/adam-stateline.jpg" alt="Adam at Stateline">
-                <button type="button" onclick="loadDoc7();"><h3>Part 7: Stateline, Nevada</h3></button>
-                
+                <h1>7</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc8();">
                 <img class="lazyOwl" data-src="thumbnails/adam-tahoe-ca.jpg" alt="Adam at Lake Tahoe">
-                <button type="button" onclick="loadDoc8();"><h3>Part 8: Lake Tahoe - California</h3></button>
+                <h1>8</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item"  onclick="loadDoc9();">
                 <img class="lazyOwl" data-src="thumbnails/adam-slots.jpg" alt="Adam at a Slot Machine">
-                <button type="button" onclick="loadDoc9();"><h3>Part 9: Inside Circus Circus</h3></button>
-                
+                <h1>9</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc10();">
                 <img class="lazyOwl" data-src="thumbnails/adam-truckee.jpg" alt="Adam at Truckee Riverwalk">
-                <button type="button" onclick="loadDoc10();"><h3>Part 10: Truckee Riverwalk</h3></button>
-                
+                <h1>10</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc11();">
                 <img class="lazyOwl" data-src="thumbnails/adam-atlantis.jpg" alt="Adam at Atlantis">
-                <button type="button" onclick="loadDoc11();"><h3>Part 11: The Rest of Reno</h3></button>
-                
+                <h1>11</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item" onclick="loadDoc12();">
                 <img class="lazyOwl" data-src="thumbnails/adam-lava-bed.jpg" alt="Adam at Lava Beds NM">
-                <button type="button" onclick="loadDoc12();"><h3>Part 12: Lava Beds NM</h3></button>
-                
+                <h1>12</h1>                
               </div>
-              <div class="item" style="width: 200px">
+              <div class="item"  onclick="loadDoc13();">
                 <img class="lazyOwl" data-src="thumbnails/adam-klamath-falls.jpg" alt="Adam at Klamath Falls">
-                <button type="button" onclick="loadDoc13();"><h3>Part 13: Klamath Falls</h3></button>
-                
+                <h1>13</h1>                
               </div>
-              <div class="item" style="width: 200px">
-                <img class="lazyOwl" data-src="thumbnails/adam-saltcreek.jpg" alt="Adam at Salt Creek Falls">                
-                <button type="button" onclick="loadDoc14();"><h3>Part 14: Salt Creek Falls</h3></button>
+              <div class="item"  onclick="loadDoc14();">
+                <img class="lazyOwl" data-src="thumbnails/adam-saltcreek.jpg" alt="Adam at Salt Creek Falls">
+                <h1>14</h1>                
               </div>              
             </div>
 

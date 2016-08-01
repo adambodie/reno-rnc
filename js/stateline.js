@@ -3,7 +3,7 @@ function loadDoc7() {
   $("#carousel").html(data);
 });  
 
-    var title = "<h1>Part 7: In the Middle in Stateline</h1>";
+    var title = "<div class='jumbotron'><h1>Part 7: In the Middle in Stateline</h1></div>";
     document.getElementById("title").innerHTML = title;
     var paragraph = "<div class='container'><div class='row'>";
     paragraph +="<div class='col-md-6 story'>";

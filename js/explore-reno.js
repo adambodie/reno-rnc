@@ -3,7 +3,7 @@ function loadDoc4() {
   $("#carousel").html(data);
 });  
 
-    var title = "<h1>Part 4: Exploring Reno</h1>";
+    var title = "<div class='jumbotron'><h1>Part 4: Exploring Reno</h1></div>";
     document.getElementById("title").innerHTML = title;
     var paragraph = "<div class='container'><div class='row'>";
     paragraph +="<div class='col-md-6 story'>";
@@ -12,14 +12,18 @@ function loadDoc4() {
     paragraph +="<p>The end of my first walk was to perhaps Reno's most iconic landmark, the Reno Arch.  I saw it first in the evening, a nice three block walk from the Circus Circus North Tower (which was closer to Virginia Street, where the Arch was located).  After struggling to get to sleep from the excitement, I returned at dark to get some nice pictures lit up at night.  It was there I wound up with a picture holding a bell.  So how did I wind up with a bell?</p>";
     paragraph += "<p>While taking a picture, I was approached by someone who asked me to hold the bell for a picture, something akin of a 'Where in the World has the Bell been' as part of some work joke.  I thought it was funny enough to ask for a picture of me holding the bell.  And so explains the oddest thing that happened to me in Reno.</p></div>";
     paragraph +="<div class='col-md-6 story'>";
-    paragraph +="<h1 class='cover-heading'>>My Facts</h1>";
+    paragraph +="<h1 class='cover-heading'>My Facts</h1>";
     paragraph +="<p>Reno's nickname is 'The Biggest Little City in the World,' as featured on the Reno Arch</p>";
     paragraph +="<p>Reno is the birthplace of Caesar's Entertainment</p>";
     paragraph +="<p>The Reno Arch was originally built in 1926 to commemorate the completion of the Lincoln and Victory Highways.</p>";
     paragraph +="<p>The current arch was completed in 1987; the original still stands on nearby Lake Street.</p>";
     paragraph +="<p>Silver Legacy Reno, completed in 1995, is the tallest building in Reno.</p>";
     paragraph +="<p>Eldorado Reno, completed in 1973, features a theatre and The Brew Brothers, the first microbrewery ever built in a casino.</p>";
-    paragraph +="<p></p></div></div></div>";
+    paragraph +="<style type='text/css'>.easyhtml5video .eh5v_script{display:none}</style><div class='easyhtml5video' style='position:relative;max-width:1280px;'><video controls='controls' poster='videos/topsy-the-clown.jpg' style='width:100%' title='topsy-the-clown'>";
+    paragraph +="<source src='videos/topsy-the-clown.m4v' type='video/mp4' />";
+    paragraph +="<source src='videos/topsy-the-clown.webm' type='video/webm' />";
+    paragraph +="<source src='videos/topsy-the-clown.ogv' type='video/ogg' />";
+    paragraph +="</video><script src='videos/html5ext.js' type='text/javascript'></script></div></div></div>";
     document.getElementById("text").innerHTML = paragraph;
   
 }

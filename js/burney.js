@@ -3,7 +3,7 @@ function loadDoc2() {
   $("#carousel").html(data);
 });
 
-    var title = "<h1>Part 2: A Hunka Hunka Burney Love and the Escape from the Lassen Forest</h1>";
+    var title = "<div class='jumbotron'><h1>Part 2: A Hunka Hunka Burney Love and the Escape from the Lassen Forest</h1></div>";
     document.getElementById("title").innerHTML = title;
     var paragraph = "<div class='container'><div class='row'>";
     paragraph +="<div class='col-md-6 story'>";

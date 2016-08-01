@@ -2,7 +2,7 @@ function loadDoc13() {
       $.get("klamath.html", function(data) {
   $("#carousel").html(data);
 }); 
-    var title = "<h1>Part 13: So I Finally Made it to Klamath Falls</h1>";
+    var title = "<div class='jumbotron'><h1>Part 13: So I Finally Made it to Klamath Falls</h1></div>";
     document.getElementById("title").innerHTML = title;
     var paragraph = "<div class='container'><div class='row'>";
     paragraph +="<div class='col-md-6 story'>";

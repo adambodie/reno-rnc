@@ -3,7 +3,7 @@ function loadDoc12() {
   $("#carousel").html(data);
 }); 
 
-    var title = "<h1>Part 12: Flowing Up to the Lava Beds</h1>";
+    var title = "<div class='jumbotron'><h1>Part 12: Flowing Up to the Lava Beds</h1></div>";
     document.getElementById("title").innerHTML = title;
     var paragraph = "<div class='container'><div class='row'>";
     paragraph +="<div class='col-md-6 story'>";
@@ -19,7 +19,12 @@ function loadDoc12() {
     paragraph +="<p>During the Modoc War from 1872-1873, the Modoc tribe used the lava beds to hold off US forces.</p>";
     paragraph +="<p>In the end, Kintpuash was captured and executed, becoming the only Native American ever to be charged with a war crime, for killing a U.S. General during a peace treaty, falsely believing the U.S. Troops would leave if their general was killed.</p>";
     paragraph +="<p>Schonchin Butte is named for another Modoc chief, Old Schonchin, who was their Chief in the late 19th Century.</p>";
-    paragraph +="<p>Other prominent members of the Modoc War include Scarface Charley and Shaknasty Jim</p></div></div></div>";
+    paragraph +="<p>Other prominent members of the Modoc War include Scarface Charley and Shaknasty Jim</p>";
+    paragraph +="<style type='text/css'>.easyhtml5video .eh5v_script{display:none}</style><div class='easyhtml5video' style='position:relative;max-width:1280px;'><video controls='controls' poster='videos/captain-jack-video.jpg' style='width:100%' title='captain-jack-video'>";
+    paragraph +="<source src='videos/captain-jack-video.m4v' type='video/mp4' />";
+    paragraph +="<source src='videos/captain-jack-video.webm' type='video/webm' />";
+    paragraph +="<source src='videos/captain-jack-video.ogv' type='video/ogg' />";
+    paragraph +="</video><script src='videos/html5ext.js' type='text/javascript'></script></div></div></div>";
     document.getElementById("text").innerHTML = paragraph;
   
 }

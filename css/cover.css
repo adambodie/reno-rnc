@@ -37,7 +37,9 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
-
+.main {
+  background: black;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -57,7 +59,26 @@ body {
 }
 .cover-heading, #title {
   font-family: 'Monoton', cursive;
+    -webkit-animation-name: title; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: title;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes title {
+    from {color: #F14285;}
+    to {color: #FFF4DC;}
+}
+
+/* Standard syntax */
+@keyframes title {
+    from {color: #F14285;}
+    to {color: #FFF4DC;}
+}
+
 /* Padding for spacing */
 .inner {
   padding: 30px;

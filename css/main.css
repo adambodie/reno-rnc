@@ -7,3 +7,9 @@ button {
     padding: 0;
     border: none;
 }
+
+.jumbotron {
+    background-color: black;
+    padding: 10px;
+
+}

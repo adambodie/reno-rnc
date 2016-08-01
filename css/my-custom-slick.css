@@ -9,3 +9,20 @@
         font-family: 'Monoton', cursive;
         color: #F14285;
     }
+    .slick-prev:before, .slick-next:before {
+        color: #81F092;
+    }
+
+    .slick-prev {
+        left: -15px;
+    }
+    .slick-next {
+        right: -15px;
+    }    
+    
+@media (min-width: 767px) {
+
+    .slick-prev:before, .slick-next:before {
+        font-size: 40px;
+    }
+}
