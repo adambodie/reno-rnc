@@ -57,6 +57,10 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
+.cover-heading {
+  font-size: 4em;
+}
 .cover-heading, #title {
   font-family: 'Monoton', cursive;
     -webkit-animation-name: title; /* Chrome, Safari, Opera */

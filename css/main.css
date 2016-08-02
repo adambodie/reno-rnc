@@ -13,3 +13,11 @@ button {
     padding: 10px;
 
 }
+
+#title h1 {
+    border: 10px solid transparent;
+    padding: 50px 20px;
+    -webkit-border-image: url(../img/border.gif) 30 round repeat; /* Safari 3.1-5 */
+    -o-border-image: url(../img/border.gif) 30 round repeat; /* Opera 11-12.1 */
+    border-image: url(../img/border.gif) 30 round repeat;
+}
