@@ -3,6 +3,9 @@
     color: #81F092;
 }
 
+.story video {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+}
 button {
     padding: 0;
     border: none;
@@ -16,8 +19,17 @@ button {
 
 #title h1 {
     border: 10px solid transparent;
-    padding: 50px 20px;
-    -webkit-border-image: url(../img/border.gif) 30 round repeat; /* Safari 3.1-5 */
-    -o-border-image: url(../img/border.gif) 30 round repeat; /* Opera 11-12.1 */
-    border-image: url(../img/border.gif) 30 round repeat;
+    padding: 40px 20px;
+    -webkit-border-image: url(../img/border.gif) 33 round repeat; /* Safari 3.1-5 */
+    -o-border-image: url(../img/border.gif) 33 round repeat; /* Opera 11-12.1 */
+    border-image: url(../img/border.gif) 33 round repeat;
+
+}
+
+#owl-demo {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

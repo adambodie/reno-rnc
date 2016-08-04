@@ -24,6 +24,10 @@
     opacity: 1;
     font-family: 'Monoton', cursive;
 }
+
+.owl-buttons:hover {
+  opacity: 0.5;
+}
 .item h1 {
   margin-top: -75px;
   position: relative;
