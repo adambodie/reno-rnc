@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       links: [
-          {index: 1, route: 'weed', thumbnail: 'weed', alt: 'Weed Store'},
+          {index: 1, route: 'shasta', thumbnail: 'weed', alt: 'Weed Store'},
           {index: 2, route: 'burney', thumbnail: 'burney', alt: 'Burney Falls'},
           {index: 3, route: 'hotel-room', thumbnail: 'circus', alt: 'Circus Circus'},
           {index: 4, route: 'explore-reno', thumbnail: 'reno', alt: 'Reno Arch'},
