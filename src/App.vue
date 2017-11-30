@@ -1,10 +1,5 @@
 <template>
 <div>
-    <div id="title">
-        <div class="cover-heading jumbotron">
-            <h1 id="title">Welcome to Reno, Nice 'n' Cool</h1>
-        </div>
-    </div>
     <div id="app">
         <router-view/>
     </div>
