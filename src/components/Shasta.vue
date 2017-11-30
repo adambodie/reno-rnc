@@ -17,7 +17,7 @@
 		<div v-for="photo in photos" :key="photo.index">
 			<div>
 				<h2>{{photo.title}}</h2>
-                <img :src="'./src/assets/' + photo.name + '.jpg'" class='img-responsive'>
+                <img :src="'./src/assets/images/' + photo.name + '.jpg'" class='img-responsive'>
 			</div>
 		</div>       
 	</div>

@@ -10,7 +10,7 @@
                     <div v-for="link in links" :key="link.index">
                         <router-link :to="'/' + link.route">
                             <div class="item">
-                                <img class="lazyOwl" :data-src="'./src/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
+                                <img class="lazyOwl" :data-src="'./src/assets/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
                                 <h1>{{link.index}}</h1>
                             </div>
                         </router-link>
@@ -79,9 +79,9 @@ body {
     color: #F14285;
     padding: 40px 20px;
     text-align: center;
-    -webkit-border-image: url(assets/border.gif) 33 round repeat;
-    -o-border-image: url(assets/border.gif) 33 round repeat;
-    border-image: url(assets/border.gif) 33 round repeat;
+    -webkit-border-image: url(assets/images/border.gif) 33 round repeat;
+    -o-border-image: url(assets/images/border.gif) 33 round repeat;
+    border-image: url(assets/images/border.gif) 33 round repeat;
 }
 #owl-demo {
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);

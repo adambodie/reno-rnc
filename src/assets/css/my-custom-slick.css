@@ -1,0 +1,34 @@
+    .slick-slide img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+        border: 10px solid white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+        margin-bottom: 20px;
+    }
+    .slick-slide h2 {
+        margin-top: 10px;
+        font-family: 'Monoton', cursive;
+        color: #F14285;
+    }
+    .slick-prev:before, .slick-next:before {
+        color: #81F092;
+    }
+
+    .slick-prev {
+        left: -15px;
+    }
+    .slick-next {
+        right: -15px;
+    }    
+    
+@media (min-width: 767px) {
+
+    .slick-prev:before, .slick-next:before {
+        font-size: 40px;
+    }
+    .intro {
+    width: 60%;
+}
+}
