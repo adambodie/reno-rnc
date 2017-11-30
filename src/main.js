@@ -8,8 +8,12 @@ Vue.config.productionTip = false
 
 Vue.component('my-title', {
   props: ['message'],
-  template: '        <div class="cover-heading jumbotron"><h1>{{ message }}</h1></div>'
+  template: '<div class="cover-heading jumbotron"><h1>{{ message }}</h1></div>'
 })
+/* Vue.component('my-carousel', {
+  props: ['title', 'name'],
+  template: '<div><h2>{{title}}</h2><img :src="\'./src/assets/{{name}}.jpg\'" class=\'img-responsive\'></div>'
+}) */
 
 /* eslint-disable no-new */
 new Vue({
@@ -20,5 +24,9 @@ new Vue({
 })
 
 new Vue({
-  el: '#my-title'
+  el: '#title'
 })
+
+/* new Vue({
+  el: '#my-carousel'
+}) */

@@ -1,9 +1,19 @@
 <template>
-<div class='container'>
+<div>
     <div id='title'>
 		<my-title message="Part 1: For the Love of Shasta"></my-title>
     </div>
-	<div class='carousel-class'>
+<div class='container'>
+
+    <!--<div class='carousel-class'>
+		<div id="my-carousel">
+			<div v-for="photo in photos"
+				 v-bind:title="photo.title"
+			     v-bind:name="photo.name">
+			</div>
+		</div>		
+    </div>-->
+    <div class='carousel-class'>
 		<div v-for="photo in photos" :key="photo.index">
 			<div>
 				<h2>{{photo.title}}</h2>
@@ -30,7 +40,7 @@
 		</div>
 	</div>
 </div>
-
+</div>
 </template>
 
 <script>
