@@ -79,8 +79,8 @@ body {
 #title h1 {
     border: 10px solid transparent;
     color: #F14285;
-    padding: 40px 20px;
     text-align: center;
+    padding-bottom: 10px;
     -webkit-border-image: url(assets/images/border.gif) 33 round repeat;
     -o-border-image: url(assets/images/border.gif) 33 round repeat;
     border-image: url(assets/images/border.gif) 33 round repeat;
@@ -141,5 +141,16 @@ a:hover {
 }
 .item h1:hover {
   opacity: 1;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes title {
+    from {color: #F14285;}
+    to {color: #FFF4DC;}
+}
+
+/* Standard syntax */
+@keyframes title {
+    from {color: #F14285;}
+    to {color: #FFF4DC;}
 }
 </style>
