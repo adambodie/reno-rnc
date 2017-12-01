@@ -16,6 +16,7 @@
                         </router-link>
                     </div>
                 </div>
+                
             </div>
           </div>
       </div>
@@ -28,6 +29,7 @@ export default {
   data () {
     return {
       links: [
+          {index: 0, route: '', thumbnail: 'home', alt: 'Home'},
           {index: 1, route: 'shasta', thumbnail: 'weed', alt: 'Weed Store'},
           {index: 2, route: 'burney', thumbnail: 'burney', alt: 'Burney Falls'},
           {index: 3, route: 'hotel-room', thumbnail: 'circus', alt: 'Circus Circus'},

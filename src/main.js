@@ -12,7 +12,7 @@ Vue.component('my-title', {
 })
 /* Vue.component('my-carousel', {
   props: ['title', 'name'],
-  template: '<div><h2>{{title}}</h2><img :src="\'./src/assets/images/{{name}}.jpg\'" class=\'img-responsive\'></div>'
+  template: '<div><h2>{{title}}</h2><img data-src="\'./src/assets/images/{{name}}.jpg\'" class=\'img-responsive\'></div>'
 }) */
 
 /* eslint-disable no-new */
