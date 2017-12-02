@@ -25,6 +25,7 @@ export default {
 
 p {
     color: #F14285;
+    font-size: 1.3em;
 }
 
 @media (min-width: 767px) {

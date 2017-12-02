@@ -50,7 +50,7 @@ export default {
         cssEase: 'linear'
       },
       photos: [
-        { title: 'Adam at Klamath', name: 'adam-klamath-river' },
+        { title: 'Adam at Klamath River', name: 'adam-klamath-river' },
         { title: 'Klamath River', name: 'klamath-river' },
         { title: 'Shasta Valley Vista Point', name: 'shasta-valley1' },
         { title: 'Shasta Valley Vista Point', name: 'shasta-valley2' },
@@ -98,8 +98,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-p {
-    color: #F14285;
+.cover-heading {
+  font-family: 'Monoton', cursive;
 }
 
 </style>

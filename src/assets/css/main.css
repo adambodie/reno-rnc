@@ -1,6 +1,15 @@
+.story-heading {
+    font-family: 'Monoton', cursive;
+    color: #F14285;
+}
+
+.story {
+    margin-bottom: 20px;
+}
 .story p {
     text-align: left;
     color: #81F092;
+    font-size: 1.3em;
 }
 
 .story video {
@@ -21,7 +30,7 @@ video {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-h1 {
+.cover-heading h1 {
     -webkit-animation-name: title; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
     animation-name: title;
