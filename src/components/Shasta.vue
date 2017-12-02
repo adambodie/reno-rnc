@@ -4,23 +4,14 @@
 		<my-title message="Part 1: For the Love of Shasta"></my-title>
     </div>
 <div class='container'>
-
-    <!--<div class='carousel-class'>
-		<div id="my-carousel">
-			<div v-for="photo in photos"
-				 v-bind:title="photo.title"
-			     v-bind:name="photo.name">
-			</div>
-		</div>		
-    </div>-->
-    <div class='carousel-class'>
+    <slick ref="slick" :options="slickOptions" class='carousel-class'>
 		<div v-for="photo in photos" :key="photo.index">
 			<div>
 				<h2>{{photo.title}}</h2>
                 <img :src="'./src/assets/images/' + photo.name + '.jpg'" class='img-responsive'>
 			</div>
 		</div>       
-	</div>
+	</slick>
 	<div class="row">
 		<div class="col-md-6 story">
 			<h1 class="story-heading">My Story</h1>
@@ -44,10 +35,20 @@
 </template>
 
 <script>
+import Slick from 'vue-slick'
+
 export default {
   name: 'Shasta',
+  components: { Slick },
   data () {
     return {
+      slickOptions: {
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        fade: true,
+        cssEase: 'linear'
+      },
       photos: [
         { title: 'Adam at Klamath', name: 'adam-klamath-river' },
         { title: 'Klamath River', name: 'klamath-river' },
@@ -80,21 +81,25 @@ export default {
         { title: 'Black Butte', name: 'black-butte2' }
       ]
     }
+  },
+  methods: {
+    next () {
+      this.$refs.slick.next()
+    },
+    prev () {
+      this.$refs.slick.prev()
+    },
+    reInit () {
+      this.$refs.slick.reSlick()
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 p {
     color: #F14285;
-}
-
-@media (min-width: 767px) {
-.intro {
-    width: 60%;
-}
 }
 
 </style>
