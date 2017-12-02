@@ -28,9 +28,9 @@ p {
 }
 
 @media (min-width: 767px) {
-.intro {
-    width: 60%;
-}
+	.intro {
+		width: 80%;
+	}
 }
 
 </style>

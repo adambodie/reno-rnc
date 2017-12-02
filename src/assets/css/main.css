@@ -22,7 +22,6 @@ video {
     margin-bottom: 20px;
 }
 h1 {
-  font-family: 'Monoton', cursive;
     -webkit-animation-name: title; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
     animation-name: title;
@@ -41,12 +40,4 @@ h1 {
     from {color: #F14285;}
     to {color: #FFF4DC;}
 }
-p {
-    color: #F14285;
-}
 
-@media (min-width: 767px) {
-.intro {
-    width: 60%;
-}
-}

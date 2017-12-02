@@ -87,9 +87,6 @@ body {
 }
 #owl-demo {
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-top: 50px;
     margin-bottom: 50px;
 }
 
