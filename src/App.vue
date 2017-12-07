@@ -9,14 +9,13 @@
                 <div id="owl-demo" class="owl-carousel">
                     <div v-for="link in links" :key="link.index">
                         <router-link :to="'/' + link.route">
-                            <div class="item">
+                            <div class="item" v-bind:title="link.message">
                                 <img class="lazyOwl" :data-src="'./src/assets/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
-                                <h1>{{link.index}}</h1>
+                                <h1 class="lazyTitle">{{link.index}}</h1>
                             </div>
                         </router-link>
                     </div>
-                </div>
-                
+                </div>                
             </div>
           </div>
       </div>
@@ -29,21 +28,21 @@ export default {
   data () {
     return {
       links: [
-          {index: 0, route: '', thumbnail: 'home', alt: 'Home'},
-          {index: 1, route: 'shasta', thumbnail: 'weed', alt: 'Weed Store'},
-          {index: 2, route: 'burney', thumbnail: 'burney', alt: 'Burney Falls'},
-          {index: 3, route: 'hotel-room', thumbnail: 'circus', alt: 'Circus Circus'},
-          {index: 4, route: 'explore-reno', thumbnail: 'reno', alt: 'Reno Arch'},
-          {index: 5, route: 'carson', thumbnail: 'carson-city', alt: 'Carson City'},
-          {index: 6, route: 'lake-tahoe-nv', thumbnail: 'tahoe-nv', alt: 'Lake Tahoe'},
-          {index: 7, route: 'stateline', thumbnail: 'stateline', alt: 'Stateline'},
-          {index: 8, route: 'lake-tahoe-ca', thumbnail: 'tahoe-ca', alt: 'Lake Tahoe'},
-          {index: 9, route: 'inside-circus', thumbnail: 'slots', alt: 'a Slot Machine'},
-          {index: 10, route: 'truckee', thumbnail: 'truckee', alt: 'Truckee Riverwalk'},
-          {index: 11, route: 'reno-final', thumbnail: 'atlantis', alt: 'Atlantis'},
-          {index: 12, route: 'lava-beds', thumbnail: 'lava-bed', alt: 'Lava Beds National Monument'},
-          {index: 13, route: 'klamath', thumbnail: 'klamath-falls', alt: 'Klamath Falls'},
-          {index: 14, route: 'salt-creek', thumbnail: 'saltcreek', alt: 'Salt Creek Falls'}
+          {index: 0, route: '', thumbnail: 'home', alt: 'Home', message: 'Home'},
+          {index: 1, route: 'shasta', thumbnail: 'weed', alt: 'Weed Store', message: 'Mt. Shasta'},
+          {index: 2, route: 'burney', thumbnail: 'burney', alt: 'Burney Falls', message: 'Burney Falls'},
+          {index: 3, route: 'hotel-room', thumbnail: 'circus', alt: 'Circus Circus', message: 'Welcome to Reno'},
+          {index: 4, route: 'explore-reno', thumbnail: 'reno', alt: 'Reno Arch', message: 'Exploring Reno'},
+          {index: 5, route: 'carson', thumbnail: 'carson-city', alt: 'Carson City', message: 'Carson City'},
+          {index: 6, route: 'lake-tahoe-nv', thumbnail: 'tahoe-nv', alt: 'Lake Tahoe', message: 'Lake Tahoe (Nevada)'},
+          {index: 7, route: 'stateline', thumbnail: 'stateline', alt: 'Stateline', message: 'Stateline'},
+          {index: 8, route: 'lake-tahoe-ca', thumbnail: 'tahoe-ca', alt: 'Lake Tahoe', message: 'Lake Tahoe (California)'},
+          {index: 9, route: 'inside-circus', thumbnail: 'slots', alt: 'a Slot Machine', message: 'Circus Circus'},
+          {index: 10, route: 'truckee', thumbnail: 'truckee', alt: 'Truckee Riverwalk', message: 'Truckee Riverwalk'},
+          {index: 11, route: 'reno-final', thumbnail: 'atlantis', alt: 'Atlantis', message: 'Reno Finale'},
+          {index: 12, route: 'lava-beds', thumbnail: 'lava-bed', alt: 'Lava Beds National Monument', message: 'Lava Beds National Monument'},
+          {index: 13, route: 'klamath', thumbnail: 'klamath-falls', alt: 'Klamath Falls', message: 'Klamath Falls'},
+          {index: 14, route: 'salt-creek', thumbnail: 'saltcreek', alt: 'Salt Creek Falls', message: 'Salt Creek Falls'}
       ]
     }
   }
@@ -84,6 +83,10 @@ body {
     -webkit-border-image: url(assets/images/border.gif) 33 round repeat;
     -o-border-image: url(assets/images/border.gif) 33 round repeat;
     border-image: url(assets/images/border.gif) 33 round repeat;
+}
+
+.lazyTitle {
+    font-size: 4em;
 }
 #owl-demo {
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
