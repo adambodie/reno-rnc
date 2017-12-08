@@ -30,6 +30,11 @@ video {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.cover-heading {
+  font-family: 'Monoton', cursive;
+}
+
 .cover-heading h1 {
     -webkit-animation-name: title; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */

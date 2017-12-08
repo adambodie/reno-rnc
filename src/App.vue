@@ -66,15 +66,6 @@ body {
     padding: 10px;
 
 }
-.cover-heading, #title {
-  font-family: 'Monoton', cursive;
-    -webkit-animation-name: title; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
-    animation-name: title;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
 #title h1 {
     border: 10px solid transparent;
     color: #F14285;
@@ -120,8 +111,11 @@ body {
     font-family: 'Monoton', cursive;
 }
 
-.owl-buttons:hover {
-  opacity: 0.5;
+.owl-prev:hover {
+  opacity: 0.5!important;
+}
+.owl-next:hover {
+  opacity: 0.5!important;
 }
 a:hover {
   text-decoration: none;
