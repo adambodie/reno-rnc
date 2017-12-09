@@ -7,18 +7,18 @@
     <slick ref="slick" :options="slickOptions" class='carousel-class'>
 		<div v-for="photo in photos" :key="photo.index">
 			<div>
+				<img :src="'./src/assets/images/' + photo.name + '.jpg'">
 				<h2>{{photo.title}}</h2>
-                <img :src="'./src/assets/images/' + photo.name + '.jpg'" class='img-responsive'>
 			</div>
 		</div>       
 	</slick>
-	<div class="row">
-		<div class="col-md-6 story">
+	<div>
+		<div class="story">
 			<h1 class="story-heading">My Story</h1>
 			<p>At some point, I was going to cross into California, and that point became clear when I reached the town of Stateline, Nevada. Clearly a border town, Stateline is Nevada's Tahoe resort town, with towering hotels dominating the view upon entering the town, four in total: Hard Rock, Harvey's, Harrah's and Montbleu, each with their own charm and character. Of course, they're known for gambling, something you just can't do in California. I didn't go inside, but I know their purpose. I walked around admiring the hotels, and eventually, I reached the California border, where the city of South Lake Tahoe is.</p>
 			<p>It's hard to determine where the exact border is, but I managed to get my picture at the sign that said "California State Line," crossed the street and got my picture at the sign that said "Nevada State Line" on the other side. It's cool to be able to walk across a border, and not have to worry about pointless walls or gushing rivers. When I was done walking across borders, I continued my Lake Tahoe trip, heading back to my car in Nevada, before driving across the border into California.</p>
 		</div>
-		<div class="col-md-6 story">
+		<div class="story">
 			<h1 class="story-heading">My Facts</h1>
 			<p>Stateline has a population of 842; but booms during the summer and winter months thanks to the tourists visiting Lake Tahoe.</p>
 			<p>Stateline is popular for gambling; as many visiting from South Lake Tahoe and beyond in California coming to Stateline to gamble.</p>

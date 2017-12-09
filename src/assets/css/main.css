@@ -1,15 +1,37 @@
+body {
+    background: url(../images/background.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+}
 .story-heading {
-    font-family: 'Monoton', cursive;
-    color: #F14285;
+    font-family: 'Arial';
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    padding: 15px;
+    text-transform: uppercase;
+    border-bottom: 10px solid blue;
+    margin-top: 0px;
 }
 
 .story {
-    margin-bottom: 20px;
+    margin: 0 20px 20px 20px;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    background-color: black;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+    
 }
 .story p {
     text-align: left;
-    color: #81F092;
+    color: white;
     font-size: 1.3em;
+    padding: 0px 20px;
 }
 
 .story video {
@@ -20,12 +42,6 @@ button {
     border: none;
 }
 
-.jumbotron {
-    background-color: black;
-    padding: 10px;
-
-}
-
 video {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -33,6 +49,7 @@ video {
 
 .cover-heading {
   font-family: 'Monoton', cursive;
+  padding: 10px;
 }
 
 .cover-heading h1 {
@@ -42,6 +59,8 @@ video {
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    font-size: 3em;
+    font-weight: 400;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes title {

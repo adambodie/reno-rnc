@@ -1,9 +1,6 @@
 <template>
-<div>
-    <div id="app">
-        <router-view/>
-    </div>
-    <div class="container">
+    <div>
+        <div id="header"><h1>Reno Nice 'n' Cool</h1></div>
         <div class="row">
             <div class="span12">
                 <div id="owl-demo" class="owl-carousel">
@@ -17,8 +14,10 @@
                     </div>
                 </div>                
             </div>
-          </div>
       </div>
+      <div id="app">
+        <router-view/>
+    </div>
 </div>
 </template>
 
@@ -52,43 +51,36 @@ export default {
 <style>
 body {
     background-color: black;
-    text-align: center;
     font-family: 'Harmattan', sans-serif;
+    text-align: center;
 }
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
-.jumbotron {
-    background-color: black;
-    padding: 10px;
 
-}
-#title h1 {
-    border: 10px solid transparent;
+#header {
+    border-bottom: 7px solid transparent;
+    font-family: 'Monoton', cursive;
     color: #F14285;
-    text-align: center;
-    padding-bottom: 10px;
+    text-align: left;
     -webkit-border-image: url(assets/images/border.gif) 33 round repeat;
     -o-border-image: url(assets/images/border.gif) 33 round repeat;
     border-image: url(assets/images/border.gif) 33 round repeat;
 }
 
+#header h1 {
+    font-weight: 400;
+}
 .lazyTitle {
-    font-size: 4em;
+    font-size: 3em;
 }
-#owl-demo {
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
-    margin-bottom: 50px;
-}
-
 #owl-demo .item{
-  margin: 10px;
+  margin: 10px 0px;
 }
 #owl-demo .item img{
-  width: 50%;
+  width: 40%;
   height: auto;
   border-radius: 100%;
   z-index: 50;
@@ -96,27 +88,17 @@ body {
 
 .owl-item {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+}
+
+.owl-carousel .owl-wrapper-outer {
+    height: 150px;
 }
 
 .owl-theme .owl-controls .owl-buttons div {
-    color: #000;
-    margin: 20px;
-    padding: 6px 15px;
-    font-size: 24px;
-    background-image: linear-gradient(to bottom,#66B657 0,#81F092 100%);
-    filter: Alpha(Opacity=100);
-    opacity: 1;
-    font-family: 'Monoton', cursive;
+    display: none;
 }
 
-.owl-prev:hover {
-  opacity: 0.5!important;
-}
-.owl-next:hover {
-  opacity: 0.5!important;
-}
 a:hover {
   text-decoration: none;
 }

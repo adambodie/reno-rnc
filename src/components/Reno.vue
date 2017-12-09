@@ -7,20 +7,20 @@
     <slick ref="slick" :options="slickOptions" class='carousel-class'>
 		<div v-for="photo in photos" :key="photo.index">
 			<div>
+				<img :src="'./src/assets/images/' + photo.name + '.jpg'">
 				<h2>{{photo.title}}</h2>
-                <img :src="'./src/assets/images/' + photo.name + '.jpg'" class='img-responsive'>
 			</div>
 		</div>       
 	</slick>
-	<div class="row">
-		<div class="col-md-6 story">
+	<div>
+		<div class="story">
 			<h1 class="story-heading">My Story</h1>
 			<p>Wanting to see some sights once I arrived in Reno, despite being tired, I couldn't stop, so I walked around a few blocks from my hotel.  There are three hotels connected to one another as part of the Eldorado Resorts family, with Circus Circus being the northernmost hotel of the three.  The other two were Silver Legacy, which was easy to spot with its giant sphere, and the Elforado, which looked like the classiest of the three.  I could have easily walked the skyway from one end to another without going outside.  I didn't figure that out until Wednesday, but still helpful to avoid the heat and the weirdos.  My first impression of Silver Legacy and Eldorado was that Silver Legacy looked hip and Eldorado looked fancy.  The sun was setting so I saw some lights.  I was impressed.</p>
-			<p>The end of my first walk was to perhaps Reno's most iconic landmark, the Reno Arch.  It was neat to see, and definitely drew a crowd.  Of course, I first saw it while the sun was setting.  I obvious had to come back at some point.  After all, it was only three blocks away from my hotel.  Life can be pretty funny though...</p>
+			<p>The end of my first walk was to perhaps Reno's most iconic landmark, the Reno Arch.  It was neat to see, and definitely drew a cflex-containerd.  Of course, I first saw it while the sun was setting.  I obvious had to come back at some point.  After all, it was only three blocks away from my hotel.  Life can be pretty funny though...</p>
 			<p>It's true what they say: You don't travel just to sleep.  How could I?  I was in a fun new place, and I can't stop, won't stop.  That's always been my motto, though I have my limits.  After struggling to get to sleep from the excitement, I returned at dark to get some nice pictures of the hotels and the Reno Arch lit up at night.  The fun comes out at night, but also the creeps.  How do you know which one is which?  Sometimes, it's easier to notice than others.  With all that said, how did I wind up at the Reno Arch holding a bell?</p>
-			<p>While taking a picture, I was approached by a nice woman who asked me to hold the bell for a picture, something akin of a "Where in the World is Carmen San Diego," but with a rotary bell as part of some work joke.  I can pick out the creeps but this lady wasn't a creep, so I listened to her admitted odd request.  Afterwards, I thought it was funny enough to ask for a picture of me holding the bell, a nice reminder of an odd yet Nugget-worthy story.  Life is full of adventures, sometimes you gotta trust your gut and I wound up with not the best picture but the funniest picture of me.  I headed back to my room afterwards and went to bed for the night.</p>
+			<p>While taking a picture, I was approached by a nice woman who asked me to hold the bell for a picture, something akin of a "Where in the World is Carmen San Diego," but with a rotary bell as part of some work joke.  I can pick out the creeps but this lady wasn't a creep, so I listened to her admitted odd request.  Afterwards, I thought it was funny enough to ask for a picture of me holding the bell, a nice reminder of an odd yet Nugget-worthystory.  Life is full of adventures, sometimes you gotta trust your gut and I wound up with not the best picture but the funniest picture of me.  I headed back to my room afterwards and went to bed for the night.</p>
 		</div>
-		<div class="col-md-6 story">
+		<div class="story">
 			<h1 class="story-heading">My Facts</h1>
 			<p>Reno's nickname is 'The Biggest Little City in the World,' as featured on the Reno Arch.</p><p>Reno is the birthplace of Caesar's Entertainment.</p>
 			<p>Reno is named after former Major General Jesse Lee Reno, a Union officer killed in the American Civil War at the Battle of South Mountain.</p>

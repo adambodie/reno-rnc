@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 
 Vue.component('my-title', {
   props: ['message'],
-  template: '<div class="cover-heading jumbotron"><h1>{{ message }}</h1></div>'
+  template: '<div class="cover-heading"><h1>{{ message }}</h1></div>'
 })
 
 /* eslint-disable no-new */
