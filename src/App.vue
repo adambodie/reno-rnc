@@ -18,6 +18,7 @@
       <div id="app">
         <router-view/>
     </div>
+    <div id="footer"><h2>Adam Bodie &copy; {{new Date().getFullYear()}}</h2></div>
 </div>
 </template>
 
@@ -68,10 +69,23 @@ body {
     -webkit-border-image: url(assets/images/border.gif) 33 round repeat;
     -o-border-image: url(assets/images/border.gif) 33 round repeat;
     border-image: url(assets/images/border.gif) 33 round repeat;
+    background-color: black;
+    margin-left: -10px;
+    margin-top: -20px;
+    margin-right: -10px;    
 }
 
 #header h1 {
     font-weight: 400;
+    padding: 10px;
+}
+
+#footer {
+    text-align: left;
+    color: #F14285;  
+    margin-left: -10px;
+    padding: 10px;
+    margin-right: -10px;    
 }
 .lazyTitle {
     font-size: 3em;
