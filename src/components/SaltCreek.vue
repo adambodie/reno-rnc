@@ -26,7 +26,7 @@
 			<p>Salt Creek Falls is 286 feet tall.</p>
 			<p>The falls were formed by glaciers, which scoured the valley during the last Ice Age, which along with lava flows created the narflex-container canyon walls for an amazing waterfall.</p>
 			<p>Salt Creek Falls is named after the salt springs along the banks of the creek itself that are used as licks by deer.</p>
-			<img src="/src/assets/images/salt-creek-map.jpg" class="img-responsive">
+			<img src="/src/assets/images/salt-creek-map.jpg" class="map">
 		</div>
 	</div>
 </div>

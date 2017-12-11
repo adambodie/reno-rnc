@@ -35,7 +35,7 @@
 					<source src="/src/assets/videos/captain-jack-video.webm" type="video/webm">
 					<source src="/src/assets/videos/captain-jack-video.ogv" type="video/ogg">
 				</video></div>
-			<img src="/src/assets/images/lava-beds-map.jpg" class="img-responsive">	
+			<img src="/src/assets/images/lava-beds-map.jpg" class="map">	
 		</div>
 	</div>
 </div>

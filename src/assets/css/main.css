@@ -19,9 +19,9 @@ body {
 }
 
 .story {
-    margin: 0 20px 20px 20px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 50px;
     background-color: black;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
     
@@ -60,6 +60,11 @@ video {
     animation-direction: alternate;
     font-weight: 400;
 }
+
+.map {
+    max-width: 300px;
+}
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes title {
     from {color: #F14285;}
@@ -78,7 +83,9 @@ video {
     }
     .story {
         width: 60%;    
-    }  
-
+    }
+    .map {
+        max-width: 500px;
+    }
 }
     
