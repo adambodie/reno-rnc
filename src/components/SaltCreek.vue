@@ -42,7 +42,8 @@ export default {
   data () {
     return {
       slickOptions: {
-        dots: false,
+        dots: true,
+        arrows: false,
         infinite: true,
         speed: 1000,
         fade: true,
@@ -59,17 +60,6 @@ export default {
     { title: 'Salt Creek Falls', name: 'salt-creek6' },
     { title: 'Salt Creek Falls', name: 'salt-creek7' }
       ]
-    }
-  },
-  methods: {
-    next () {
-      this.$refs.slick.next()
-    },
-    prev () {
-      this.$refs.slick.prev()
-    },
-    reInit () {
-      this.$refs.slick.reSlick()
     }
   }
 }

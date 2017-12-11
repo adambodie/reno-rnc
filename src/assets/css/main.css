@@ -22,7 +22,6 @@ body {
     margin: 0 20px 20px 20px;
     display: block;
     margin: 0 auto;
-    width: 60%;
     background-color: black;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
     
@@ -59,7 +58,6 @@ video {
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    font-size: 3em;
     font-weight: 400;
 }
 /* Chrome, Safari, Opera */
@@ -74,3 +72,13 @@ video {
     to {color: #FFF4DC;}
 }
 
+@media (min-width: 767px) {
+    .cover-heading h1 {
+        font-size: 3em;
+    }
+    .story {
+        width: 60%;    
+    }  
+
+}
+    

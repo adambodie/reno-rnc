@@ -42,7 +42,8 @@ export default {
   data () {
     return {
       slickOptions: {
-        dots: false,
+        dots: true,
+        arrows: false,
         infinite: true,
         speed: 1000,
         fade: true,
@@ -81,17 +82,6 @@ export default {
 { title: 'Rubicon Peak from Emerald Bay', name: 'lake-tahoe37' },
 { title: 'Lake Tahoe from Emerald Bay', name: 'lake-tahoe38' }
       ]
-    }
-  },
-  methods: {
-    next () {
-      this.$refs.slick.next()
-    },
-    prev () {
-      this.$refs.slick.prev()
-    },
-    reInit () {
-      this.$refs.slick.reSlick()
     }
   }
 }

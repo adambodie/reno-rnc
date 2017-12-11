@@ -41,7 +41,8 @@ export default {
   data () {
     return {
       slickOptions: {
-        dots: false,
+        dots: true,
+        arrows: false,
         infinite: true,
         speed: 1000,
         fade: true,
@@ -55,17 +56,6 @@ export default {
     { title: 'Mt. McLoughlin', name: 'mcloughlin1' },
     { title: 'Mt. McLoughlin', name: 'mcloughlin2' }
       ]
-    }
-  },
-  methods: {
-    next () {
-      this.$refs.slick.next()
-    },
-    prev () {
-      this.$refs.slick.prev()
-    },
-    reInit () {
-      this.$refs.slick.reSlick()
     }
   }
 }

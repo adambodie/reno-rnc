@@ -1,9 +1,15 @@
-$(document).ready(function() {
- 
-  $("#owl-demo").owlCarousel({
-    items : 6,
-    lazyLoad : true,
-    navigation : true
-  }); 
- 
+$(document).ready(function(){
+$('.owl-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  nav:true,
+  responsive:{
+      0:{
+          items:3
+      },
+      768:{
+          items:6
+      }
+  }
+})
 });

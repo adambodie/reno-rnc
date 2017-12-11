@@ -3,13 +3,11 @@
         <div id="header"><h1>Reno Nice 'n' Cool</h1></div>
         <div class="row">
             <div class="span12">
-                <div id="owl-demo" class="owl-carousel">
-                    <div v-for="link in links" :key="link.index">
-                        <router-link :to="'/' + link.route">
-                            <div class="item" v-bind:title="link.message">
-                                <img class="lazyOwl" :data-src="'./src/assets/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
+                <div class="owl-carousel owl-theme">
+                    <div class="item" v-for="link in links" :key="link.index">
+                        <router-link :to="'/' + link.route" v-bind:title="link.message">
+                                <img :src="'./src/assets/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
                                 <h1 class="lazyTitle">{{link.index}}</h1>
-                            </div>
                         </router-link>
                     </div>
                 </div>                
@@ -90,14 +88,16 @@ body {
 .lazyTitle {
     font-size: 3em;
 }
-#owl-demo .item{
-  margin: 10px 0px;
+.owl-carousel {
+    margin-top: 10px;
 }
-#owl-demo .item img{
-  width: 40%;
+.owl-carousel .item img{
+  width: 60%;
   height: auto;
   border-radius: 100%;
   z-index: 50;
+  display: block;
+  margin: 0 auto;
 }
 
 .owl-item {
@@ -109,8 +109,20 @@ body {
     height: 150px;
 }
 
-.owl-theme .owl-controls .owl-buttons div {
-    display: none;
+.owl-prev, .owl-next {
+    color: #000!important;
+    margin: 0 30px!important;
+    font-size: 24px!important;
+    background-image: linear-gradient(to bottom,#66B657 0,#81F092 100%)!important;
+    filter: Alpha(Opacity=100);
+    opacity: 1;
+    font-family: 'Monoton', cursive;
+}
+
+.owl-prev:hover, .owl-next:hover {
+    filter: Alpha(Opacity=100)!important;
+    opacity: 0.8!important;
+
 }
 
 a:hover {
@@ -142,5 +154,11 @@ a:hover {
 @keyframes title {
     from {color: #F14285;}
     to {color: #FFF4DC;}
+}
+
+@media (min-width: 767px) {
+    .owl-carousel .item img{
+    width: 60%;
+    }
 }
 </style>

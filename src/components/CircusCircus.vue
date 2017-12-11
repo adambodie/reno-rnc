@@ -40,7 +40,8 @@ export default {
   data () {
     return {
       slickOptions: {
-        dots: false,
+        dots: true,
+        arrows: false,
         infinite: true,
         speed: 1000,
         fade: true,
@@ -64,17 +65,6 @@ export default {
     { title: 'Inside Circus Circus', name: 'circus-circus-inside15' },
     { title: 'Adam playing Slots', name: 'adam-circus-circus-slot' }
       ]
-    }
-  },
-  methods: {
-    next () {
-      this.$refs.slick.next()
-    },
-    prev () {
-      this.$refs.slick.prev()
-    },
-    reInit () {
-      this.$refs.slick.reSlick()
     }
   }
 }
