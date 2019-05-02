@@ -29,12 +29,7 @@
 			<p>Schonchin Butte is named for another Modoc chief, Old Schonchin, who was their Chief in the late 19th Century.</p>
 			<p>Other prominent members of the Modoc War include Scarface Charley and Shaknasty Jim.</p>
 			<p>After the Modoc War, the tribe was banished to Indian Territory (now Oklahoma). Today, there are about 800 members of the Modoc Tribe, with about 600 living in Oregon and about 200 living in Oklahoma.</p>
-			<div class="easyhtml5video" style="position:relative;max-width:1280px;">
-				<video controls="controls" poster="/src/assets/videos/captain-jack-video.jpg" style="width:100%" title="captain-jack-video">
-					<source src="/src/assets/videos/captain-jack-video.m4v" type="video/mp4">
-					<source src="/src/assets/videos/captain-jack-video.webm" type="video/webm">
-					<source src="/src/assets/videos/captain-jack-video.ogv" type="video/ogg">
-				</video></div>
+			<my-video title="captain-jack-video"></my-video>
 			<img src="/src/assets/images/lava-beds-map.jpg" class="map">	
 		</div>
 	</div>

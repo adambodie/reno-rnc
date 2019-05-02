@@ -25,13 +25,7 @@
 			<p>There are 1620 rooms overall at Circus Circus.</p>
 			<p>There are three towers, the North Tower, the Casino Tower and the Sky Tower.</p>
 			<p>There are 27 floors overall at the Sky Tower, the tallest of the Circus Circus towers.</p>
-			<div class="easyhtml5video" style="position:relative;max-width:1280px;">
-				<video controls="controls" poster="/src/assets/videos/ramada-video.jpg" style="width:100%" title="ramada-video">
-					<source src="/src/assets/videos/ramada-video.m4v" type="video/mp4">
-					<source src="/src/assets/videos/ramada-video.webm" type="video/webm">
-					<source src="/src/assets/videos/ramada-video.ogv" type="video/ogg">
-				</video>
-			</div>
+			<my-video title="ramada-video"></my-video>
 		</div>
 	</div>
 </div>

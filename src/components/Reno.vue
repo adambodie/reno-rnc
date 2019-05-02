@@ -28,13 +28,7 @@
 			<p>The current arch was completed in 1987; the original still stands on nearby Lake Street.</p>
 			<p>Silver Legacy Reno, completed in 1995, is the tallest building in Reno.</p>
 			<p>Eldorado Reno, completed in 1973, features a theatre and The Brew Brothers, the first microbrewery ever built in a casino.</p>
-			<div class="easyhtml5video" style="position:relative;max-width:1280px;">
-				<video controls="controls" poster="/src/assets/videos/topsy-the-clown.jpg" style="width:100%" title="topsy-the-clown">
-					<source src="/src/assets/videos/topsy-the-clown.m4v" type="video/mp4">
-					<source src="/src/assets/videos/topsy-the-clown.webm" type="video/webm">
-					<source src="/src/assets/videos/topsy-the-clown.ogv" type="video/ogg">
-				</video>
-			</div>
+			<my-video title="topsy-the-clown"></my-video>
 		</div>
 	</div>
 </div>

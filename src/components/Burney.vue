@@ -26,14 +26,7 @@
 			<p>McArthur-Burney Falls Memorial State Park is the second oldest state park in California, formed in the 1920s.</p>
 			<p>Burney Falls is named after pioneer Samuel Burney, who lived in the area in the 1850s.</p>
 			<p>Lassen Peak, with an elevation of 10,457 feet, is the southernmost active volcano of the Cascades, and along with Mt. St. Helens, was the only volcano in the contiguous United States to erupt in the 20th Century (erupting in 1915).</p>
-			<div class="easyhtml5video" style="position:relative;max-width:1280px;">
-				<video controls="controls" poster="/src/assets/videos/burney-video.jpg" style="width:100%" title="burney-video">
-					<source src="/src/assets/videos/burney-video.m4v" type="video/mp4">
-					<source src="/src/assets/videos/burney-video.webm" type="video/webm">
-					<source src="/src/assets/videos/burney-video.ogv" type="video/ogg">
-				</video>
-				
-			</div>
+			<my-video title="burney-video"></my-video>
 		</div>
 	</div>
 </div>
