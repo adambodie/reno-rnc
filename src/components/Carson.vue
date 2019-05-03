@@ -4,14 +4,7 @@
 		<my-title message="Part 5: A Brief Stop at the Capitol"></my-title>
     </div>
 <div class='container'>
-    <slick ref="slick" :options="slickOptions" class='carousel-class'>
-		<div v-for="photo in photos" :key="photo.index">
-			<div>
-				<img :src="'./src/assets/images/' + photo.name + '.jpg'">
-				<h2>{{photo.title}}</h2>
-			</div>
-		</div>       
-	</slick>
+    <my-slick :photos="photos"></my-slick>
 	<div>
 		<div class="story">
 			<h1 class="story-heading">My Story</h1>
@@ -38,14 +31,6 @@ export default {
   components: { Slick },
   data () {
     return {
-      slickOptions: {
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 1000,
-        fade: true,
-        cssEase: 'linear'
-      },
       photos: [
     { title: 'Nevada State Capitol', name: 'carsoncity1' },
     { title: 'Nevada State Capitol', name: 'carsoncity2' },

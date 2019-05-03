@@ -1,14 +1,7 @@
 <template>
 <div>
 <div class='container'>
-    <slick ref="slick" :options="slickOptions" class='carousel-class'>
-		<div v-for="photo in photos" :key="photo.index">
-			<div>
-				<img :src="'./src/assets/images/' + photo.name + '.jpg'">
-				<h2>{{photo.title}}</h2>
-			</div>
-		</div>       
-	</slick>
+		<my-slick :photos="photos"></my-slick>
 	<div id='title'>
 		<my-title message="Part 1: For the Love of Shasta"></my-title>
     </div>
@@ -35,21 +28,11 @@
 </template>
 
 <script>
-import Slick from 'vue-slick'
 
 export default {
   name: 'Shasta',
-  components: { Slick },
   data () {
     return {
-      slickOptions: {
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 1000,
-        fade: true,
-        cssEase: 'linear'
-      },
       photos: [
         { title: 'Adam at Klamath River', name: 'adam-klamath-river' },
         { title: 'Klamath River', name: 'klamath-river' },

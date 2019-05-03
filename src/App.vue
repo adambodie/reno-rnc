@@ -1,23 +1,22 @@
 <template>
     <div>
-        <div id="header"><h1>Reno Nice 'n' Cool</h1></div>
-        <div class="row">
-            <div class="span12">
-                <div class="owl-carousel owl-theme">
-                    <div class="item" v-for="link in links" :key="link.index">
-                        <router-link :to="'/' + link.route" v-bind:title="link.message">
-                                <img :src="'./src/assets/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
-                                <h1 class="lazyTitle">{{link.index}}</h1>
-                        </router-link>
-                    </div>
-                </div>                
-            </div>
-      </div>
-      <div id="app">
-        <router-view/>
+        <div id="header">
+          <h1>Reno Nice 'n' Cool</h1>
+        </div>
+        <div class="borders">
+            <my-border v-for="n in 85" :key="n"></my-border>
+        </div>
+        <my-owl :links="links"></my-owl>
+        <div class="borders">
+            <my-border v-for="n in 85" :key="n"></my-border>
+        </div>
+        <div id="app">
+          <router-view/>
+        </div>
+        <div id="footer">
+          <h2>Adam Bodie &copy; {{new Date().getFullYear()}}</h2>
+        </div>
     </div>
-    <div id="footer"><h2>Adam Bodie &copy; {{new Date().getFullYear()}}</h2></div>
-</div>
 </template>
 
 <script>
@@ -64,9 +63,6 @@ body {
     font-family: 'Monoton', cursive;
     color: #F14285;
     text-align: left;
-    -webkit-border-image: url(assets/images/border.gif) 33 round repeat;
-    -o-border-image: url(assets/images/border.gif) 33 round repeat;
-    border-image: url(assets/images/border.gif) 33 round repeat;
     background-color: black;
     margin-left: -10px;
     margin-top: -20px;
@@ -75,7 +71,8 @@ body {
 
 #header h1 {
     font-weight: 400;
-    padding: 10px;
+    text-indent: 1.5em;
+    margin-bottom: 0;
 }
 
 #footer {

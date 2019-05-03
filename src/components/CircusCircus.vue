@@ -4,14 +4,7 @@
 		<my-title message="Part: 9: My Cave for the Trip: Circus Circus"></my-title>
     </div>
 <div class='container'>
-    <slick ref="slick" :options="slickOptions" class='carousel-class'>
-		<div v-for="photo in photos" :key="photo.index">
-			<div>
-				<img :src="'./src/assets/images/' + photo.name + '.jpg'">
-				<h2>{{photo.title}}</h2>
-			</div>
-		</div>       
-	</slick>
+    <my-slick :photos="photos"></my-slick>
 	<div class="row">
 		<div class="story">
 			<h1 class="story-heading">My Story</h1>
@@ -32,21 +25,11 @@
 </template>
 
 <script>
-import Slick from 'vue-slick'
 
 export default {
   name: 'CircusCircus',
-  components: { Slick },
   data () {
     return {
-      slickOptions: {
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 1000,
-        fade: true,
-        cssEase: 'linear'
-      },
       photos: [
     { title: 'Inside Circus Circus', name: 'circus-circus-inside1' },
     { title: 'Inside Circus Circus', name: 'circus-circus-inside2' },

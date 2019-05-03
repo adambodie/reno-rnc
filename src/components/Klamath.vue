@@ -4,14 +4,7 @@
 		<my-title message="Part 13: So I Finally Made it to Klamath Falls"></my-title>
     </div>
 <div class='container'>
-    <slick ref="slick" :options="slickOptions" class='carousel-class'>
-		<div v-for="photo in photos" :key="photo.index">
-			<div>
-				<img :src="'./src/assets/images/' + photo.name + '.jpg'">
-				<h2>{{photo.title}}</h2>
-			</div>
-		</div>       
-	</slick>
+    <my-slick :photos="photos"></my-slick>
 	<div>
 		<div class="story">
 			<h1 class="story-heading">My Story</h1>
@@ -33,21 +26,11 @@
 </template>
 
 <script>
-import Slick from 'vue-slick'
 
 export default {
   name: 'Klamath',
-  components: { Slick },
   data () {
     return {
-      slickOptions: {
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 1000,
-        fade: true,
-        cssEase: 'linear'
-      },
       photos: [
     { title: 'Seagull flying above Upper Klamath Lake', name: 'klamath3' },
     { title: 'Adam at Upper Klamath Lake', name: 'adam-klamath' },
