@@ -1,7 +1,7 @@
 <template>
 	<div class="roulette">
 	<h1>Roulette</h1>
-	<div id="wheel" v-bind:class="{ active: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
+	<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
 	<div class="buttons">
 	<button class="owl-next" @click="spin()">Spin</button>
 	<button class="owl-next" @click="reset()">Reset</button>
@@ -55,7 +55,7 @@ export default {
 
 }
 
-.active { 
+.activeRoulette { 
   animation: spinning 2.0s forwards;
 }
 
