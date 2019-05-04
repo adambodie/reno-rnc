@@ -14,6 +14,9 @@
           <router-view/>
         </div>
         <div id="footer">
+          <div class="borders">
+            <my-border v-for="n in 85" :key="n"></my-border>
+          </div>
           <h2>Adam Bodie &copy; {{new Date().getFullYear()}}</h2>
         </div>
     </div>
@@ -63,7 +66,6 @@ body {
     font-family: 'Monoton', cursive;
     color: #F14285;
     text-align: left;
-    background-color: black;
     margin-left: -10px;
     margin-top: -20px;
     margin-right: -10px;    
@@ -71,7 +73,7 @@ body {
 
 #header h1 {
     font-weight: 400;
-    text-indent: 1.5em;
+    text-indent: 1em;
     margin-bottom: 0;
 }
 
@@ -79,8 +81,11 @@ body {
     text-align: left;
     color: #F14285;  
     margin-left: -10px;
-    padding: 10px;
     margin-right: -10px;    
+}
+
+#footer h2 {
+	text-indent: 1em;
 }
 .lazyTitle {
     font-size: 3em;

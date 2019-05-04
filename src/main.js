@@ -33,16 +33,20 @@ Vue.component('my-title', {
 Vue.component('my-slick', {
   props: ['photos'],
   components: { Slick },
-  slickOptions: {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 1000,
-    fade: true,
-    cssEase: 'linear'
+  data: function () {
+    return {
+      slickOptions: {
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 1000,
+        fade: true,
+        cssEase: 'linear'
+      }
+    }
   },
   template: `
-  <slick ref="slick" :options="slickOptions" class='carousel-class'> 
+  <slick ref="slick" :options="this.slickOptions" class='carousel-class'> 
     <div v-for="photo in photos" :key="photo.index">
       <div>
         <img :src="'./src/assets/images/' + photo.name + '.jpg'">
@@ -70,8 +74,4 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
-})
-
-new Vue({
-  el: '#title'
 })
