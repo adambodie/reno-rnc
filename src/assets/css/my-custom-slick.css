@@ -16,7 +16,9 @@
         font-weight: 400;
     }
     
-
+    .slick-prev:before, .slick-next:before {
+        font-size: 40px;
+     }
     .slick-dots li.slick-active button:before {
         color: rgb(55, 95, 60);
         opacity: 1;
@@ -32,12 +34,18 @@
     .slick-prev {
         left: 0px;
         top: 40%;
+        z-index: 999;
+        width: 40px;
+        height: 40px;
     }
     .slick-next {
         right: 0px;
         top: 40%;
-    }    
-    
+        z-index: 999;
+        width: 40px;     
+        height: 40px;   
+    }
+
 @media (min-width: 767px) {
     .slick-slide img {
         max-width: 600px;
