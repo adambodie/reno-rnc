@@ -9,6 +9,12 @@ Vue.component('my-border', {
   template: `<div class="border"></div>`
 })
 
+Vue.component('my-borders', {
+  template: `<div class="borders">
+                 <my-border v-for="n in 85" :key="n"></my-border>
+              </div>`
+})
+
 Vue.component('my-owl', {
   props: ['links'],
   template: `<div class="row">
@@ -59,7 +65,7 @@ Vue.component('my-slick', {
 Vue.component('my-video', {
   props: ['title'],
   template: `
-    <div class="easyhtml5video" style="position:relative;max-width:1280px;">
+    <div class="videos">
       <video controls="controls" v-bind:poster="'/src/assets/videos/' + title + '.jpg'" style="width:100%" :title="title">
         <source v-bind:src="'/src/assets/videos/' + title +'.m4v'" type="video/mp4">
         <source v-bind:src="'/src/assets/videos/' + title +'.webm'" type="video/webm">

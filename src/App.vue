@@ -3,20 +3,14 @@
         <div id="header">
           <h1>Reno Nice 'n' Cool</h1>
         </div>
-        <div class="borders">
-            <my-border v-for="n in 85" :key="n"></my-border>
-        </div>
+        <my-borders></my-borders>
         <my-owl :links="links"></my-owl>
-        <div class="borders">
-            <my-border v-for="n in 85" :key="n"></my-border>
-        </div>
+        <my-borders></my-borders>
         <div id="app">
           <router-view/>
         </div>
         <div id="footer">
-          <div class="borders">
-            <my-border v-for="n in 85" :key="n"></my-border>
-          </div>
+          <my-borders></my-borders>
           <h2>Adam Bodie &copy; {{new Date().getFullYear()}}</h2>
         </div>
     </div>

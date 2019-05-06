@@ -46,14 +46,17 @@ video {
     margin-bottom: 20px;
 }
 
+.videos {
+	position:relative;
+	max-width:1280px;
+}
+
 .cover-heading {
   font-family: 'Monoton', cursive;
   padding: 10px;
 }
 
 .cover-heading h1 {
-    -webkit-animation-name: title; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
     animation-name: title;
     animation-duration: 4s;
     animation-iteration-count: infinite;
