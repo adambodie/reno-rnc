@@ -4,9 +4,40 @@
 		<div class="roulette">
 			<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
 			<div id="ball" v-bind:class="{ activeBall: isActive }"></div>
-			<div class="buttons">
-				<button class="owl-next" @click="spin()">Spin</button>
-				<button class="owl-next" @click="reset()">Reset</button>
+			<h2 v-bind:class="{ activeWinner: updatedStatus }">{{winner}}</h2>
+			<div class="buttons roulette-button">
+				<button @click="spin()">Spin</button>
+				<button @click="reset()">Reset</button>
+				<button @click="clear()">Clear</button>
+			</div>
+			<div class="forms">
+				<div class="color-form roulette-button">
+					<h3>Red or Black</h3>
+					<input type="radio" id="one" value="Red" v-model="colorPicked">
+					<label for="one">Red</label>
+					<br>
+					<input type="radio" id="two" value="Black" v-model="colorPicked">
+					<label for="one">Black</label>
+					<br>
+				</div>
+				<div class="even-form roulette-button">
+					<h3>Even or Odd</h3>
+					<input type="radio" id="one" value="Even" v-model="evenPicked">
+					<label for="one">Even</label>
+					<br>
+					<input type="radio" id="two" value="Odd" v-model="evenPicked">
+					<label for="one">Odd</label>
+					<br>
+				</div>
+				<div class="high-form roulette-button">
+					<h3>High or Low</h3>
+					<input type="radio" id="one" value="High" v-model="highPicked">
+					<label for="one">High</label>
+					<br>
+					<input type="radio" id="two" value="Low" v-model="highPicked">
+					<label for="one">Low</label>
+					<br>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -18,8 +49,13 @@ export default {
   data () {
     return {
       rotation: '3600deg',
+      colorPicked: '',
+      evenPicked: '',
+      highPicked: '',
       isActive: false,
+      updatedStatus: false,
       color: '',
+      winner: '',
       slots: [
         { number: 32, color: 'red', degree: 350 },
         { number: 15, color: 'black', degree: 341 },
@@ -62,13 +98,90 @@ export default {
   },
   methods: {
     spin () {
-      this.isActive = true
       const random = Math.floor(Math.random() * 360)
-      const degree = 3600 + random
-      this.rotation = degree + 'deg'
+      setTimeout(() => {
+        this.isActive = false
+        this.updatedStatus = false
+        this.winner = ''
+      }, 0)
+      setTimeout(() => {
+        this.isActive = true
+        this.updatedStatus = true
+        const degree = 3600 + random
+        this.rotation = degree + 'deg'
+      }, 100)
+      setTimeout(() => {
+        if (this.colorPicked !== '') {
+          this.pickColor(random)
+        }
+        if (this.evenPicked !== '') {
+          this.pickEven(random)
+        }
+        if (this.highPicked !== '') {
+          this.pickHigh(random)
+        }
+      }, 2500)
     },
     reset () {
       this.isActive = false
+      this.rotation = '3600deg'
+      this.winner = ''
+    },
+    clear () {
+      this.colorPicked = ''
+      this.evenPicked = ''
+      this.highPicked = ''
+    },
+    pickColor (random) {
+      this.slots.map((x, index) => {
+        for (let i = -5; i < 6; i++) {
+          if (x.degree === random - i) {
+            if (this.colorPicked.toUpperCase() === x.color.toUpperCase()) {
+              this.winner = 'You Win!!!'
+            } else {
+              this.winner = 'You Lose...'
+            }
+          }
+        }
+      })
+    },
+    pickEven (random) {
+      this.slots.map((x, index) => {
+        for (let i = -5; i < 6; i++) {
+          if (x.degree === random - i) {
+            if ((x.number % 2 === 0) && (this.evenPicked = 'Even')) {
+              this.winner = 'You Win!!!'
+            } else if ((x.number % 2 === 1) && (this.evenPicked = 'Odd')) {
+              this.winner = 'You Win!!!'
+            } else if ((x.number % 2 === 0) && (this.evenPicked = 'Odd')) {
+              this.winner = 'You Lose...'
+            } else if ((x.number % 2 === 1) && (this.evenPicked = 'Even')) {
+              this.winner = 'You Lose...'
+            } else {
+              this.winner = 'Try Again'
+            }
+          }
+        }
+      })
+    },
+    pickHigh (random) {
+      this.slots.map((x, index) => {
+        for (let i = -5; i < 6; i++) {
+          if (x.degree === random - i) {
+            if ((x.number > 18) && (this.highPicked = 'High')) {
+              this.winner = 'You Win!!!'
+            } else if ((x.number < 18) && (this.highPicked = 'Low')) {
+              this.winner = 'You Win!!!'
+            } else if ((x.number < 18) && (this.highPicked = 'High')) {
+              this.winner = 'You Lose...'
+            } else if ((x.number > 18) && (this.highPicked = 'Low')) {
+              this.winner = 'You Lose...'
+            } else {
+              this.winner = 'Try Again'
+            }
+          }
+        }
+      })
     }
   }
 }
@@ -83,12 +196,18 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	margin: 0 auto;
-	width: 60%;
+	width: 80%;
 	position: relative;
 	padding: 20px;
 }
 
 
+.roulette h2 {
+	opacity: 0;
+	height: 30px;
+	color: #F14285;
+	font-family: 'Monoton', cursive;
+}
 #ball {
 	width: 25px;
 	height: 25px;
@@ -101,7 +220,9 @@ export default {
 
 .buttons {
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 20px!important;
+	display: flex;
+	justify-content: space-around;
 }
 #wheel {
   width: 400px;
@@ -118,6 +239,9 @@ export default {
 .activeBall {
   animation: ball 2.0s ease-out 0.25s forwards;
 }
+.activeWinner {
+	opacity: 1!important;
+}
 @keyframes spinning {
   0% { transform: rotate(0); }
   100% { transform: rotate(var(--rotation)); }
@@ -125,7 +249,29 @@ export default {
 
 @keyframes ball {
   0% { opacity: 0; top: 50%;}
-  100% { opacity: 1; top: 10%; }
+  100% { opacity: 1; top: 7%; }
 }
 
+.color-form, .even-form, .high-form {
+	width: 33%;
+}
+
+.roulette-button {
+	color: #F14285;
+	font-family: 'Monoton', cursive;
+}
+.roulette-button label {
+	color: white;
+}
+.roulette-button button {
+	padding: 10px;
+	font-family: 'Monoton', cursive;
+	background: #81F092;
+	margin-top: 10px;
+}
+
+.forms {
+	display: flex;
+	width: 100%;
+}
 </style>
