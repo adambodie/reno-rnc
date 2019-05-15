@@ -5,6 +5,13 @@
 			<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
 			<div id="ball" v-bind:class="{ activeBall: isActive }"></div>
 			<h2 v-bind:class="{ activeWinner: updatedStatus }">{{winner}}</h2>
+			<div class="chips roulette-button">
+				<h1>Your Chips:  {{chips}}</h1>
+				<h3>Wager:  {{betAmount}}</h3>
+				<button @click="placeBetAdd()">Add</button>
+				<button @click="placeBetAll()">Add All</button>
+				<button @click="placeBetMinus()">Minus</button>
+			</div>
 			<div class="buttons roulette-button">
 				<button @click="spin()">Spin</button>
 				<button @click="reset()">Reset</button>
@@ -49,6 +56,8 @@ export default {
   data () {
     return {
       rotation: '3600deg',
+      chips: 1000,
+      betAmount: 0,
       colorPicked: '',
       evenPicked: '',
       highPicked: '',
@@ -97,7 +106,34 @@ export default {
     }
   },
   methods: {
+    placeBetAdd () {
+      if (this.chips === 0) {
+        alert('No more chips to place your bet')
+      } else {
+        this.betAmount += 100
+        this.chips -= 100
+      }
+    },
+    placeBetAll () {
+      if (this.chips === 0) {
+        alert('No more chips to place your bet')
+      } else {
+        this.betAmount += this.chips
+        this.chips = 0
+      }
+    },
+    placeBetMinus () {
+      if (this.betAmount > 0) {
+        this.betAmount -= 100
+        this.chips += 100
+      } else {
+        alert('Please try again')
+      }
+    },
     spin () {
+      if (this.betAmount === 0) {
+        alert('Please place a wager')
+      }
       const random = Math.floor(Math.random() * 360)
       setTimeout(() => {
         this.isActive = false
@@ -126,21 +162,34 @@ export default {
       this.isActive = false
       this.rotation = '3600deg'
       this.winner = ''
+      this.betAmount = 0
+      this.chips = 1000
     },
     clear () {
       this.colorPicked = ''
       this.evenPicked = ''
       this.highPicked = ''
     },
+    loseSpin (number, color) {
+      this.winner = number + ' ' + color + '. You Lose...'
+      if (this.chips === 0) {
+        alert('Game Over')
+      }
+    },
+    winSpin (number, color) {
+      this.winner = number + ' ' + color + '. You Win!!!'
+      this.chips += (this.betAmount * 2)
+    },
     pickColor (random) {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
             if (this.colorPicked.toUpperCase() === x.color.toUpperCase()) {
-              this.winner = 'You Win!!!'
+              this.winSpin(x.number, x.color)
             } else {
-              this.winner = 'You Lose...'
+              this.loseSpin(x.number, x.color)
             }
+            this.betAmount = 0
           }
         }
       })
@@ -149,17 +198,14 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            if ((x.number % 2 === 0) && (this.evenPicked = 'Even')) {
-              this.winner = 'You Win!!!'
-            } else if ((x.number % 2 === 1) && (this.evenPicked = 'Odd')) {
-              this.winner = 'You Win!!!'
-            } else if ((x.number % 2 === 0) && (this.evenPicked = 'Odd')) {
-              this.winner = 'You Lose...'
-            } else if ((x.number % 2 === 1) && (this.evenPicked = 'Even')) {
-              this.winner = 'You Lose...'
+            if (((x.number % 2 === 0) && (this.evenPicked === 'Even')) || ((x.number % 2 === 1) && (this.evenPicked === 'Odd'))) {
+              this.winSpin(x.number, x.color)
+            } else if (((x.number % 2 === 0) && (this.evenPicked === 'Odd')) || ((x.number % 2 === 1) && (this.evenPicked === 'Even'))) {
+              this.loseSpin(x.number, x.color)
             } else {
               this.winner = 'Try Again'
             }
+            this.betAmount = 0
           }
         }
       })
@@ -168,17 +214,14 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            if ((x.number > 18) && (this.highPicked = 'High')) {
-              this.winner = 'You Win!!!'
-            } else if ((x.number < 18) && (this.highPicked = 'Low')) {
-              this.winner = 'You Win!!!'
-            } else if ((x.number < 18) && (this.highPicked = 'High')) {
-              this.winner = 'You Lose...'
-            } else if ((x.number > 18) && (this.highPicked = 'Low')) {
-              this.winner = 'You Lose...'
+            if (((x.number > 18) && (this.highPicked === 'High')) || ((x.number < 18) && (this.highPicked === 'Low'))) {
+              this.winSpin(x.number, x.color)
+            } else if (((x.number < 18) && (this.highPicked === 'High')) || ((x.number > 18) && (this.highPicked === 'Low'))) {
+              this.loseSpin(x.number, x.color)
             } else {
               this.winner = 'Try Again'
             }
+            this.betAmount = 0
           }
         }
       })
