@@ -3,7 +3,7 @@
 		<h1 class="story-heading">Roulette</h1>
 		<div class="roulette">
 			<div class="roulette-row">
-				<div class="buttons roulette-button">
+				<div class="roulette-column roulette-column-buttons">
 					<button @click="placeBetAdd()">Add</button>
 					<button @click="placeBetAll()">Add All</button>
 					<button @click="placeBetMinus()">Minus</button>
@@ -14,35 +14,35 @@
 				<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
 				<div class="forms">
 					<div class="radio-forms">
-					<div class="color-form roulette-button">
-						<h3>Red or Black</h3>
-						<input type="radio" id="one" value="Red" v-model="colorPicked">
-						<label for="one">Red</label>
-						<br>
-						<input type="radio" id="two" value="Black" v-model="colorPicked">
-						<label for="one">Black</label>
-						<br>
+						<div class="roulette-column roulette-column-form">
+							<h3>Red or Black</h3>
+							<input type="radio" id="one" value="Red" v-model="colorPicked">
+							<label for="one">Red</label>
+							<br>
+							<input type="radio" id="two" value="Black" v-model="colorPicked">
+							<label for="one">Black</label>
+							<br>
+						</div>
+						<div class="roulette-column roulette-column-form">
+							<h3>Even or Odd</h3>
+							<input type="radio" id="one" value="Even" v-model="evenPicked">
+							<label for="one">Even</label>
+							<br>
+							<input type="radio" id="two" value="Odd" v-model="evenPicked">
+							<label for="one">Odd</label>
+							<br>
+						</div>
+						<div class="roulette-column roulette-column-form">
+							<h3>High or Low</h3>
+							<input type="radio" id="one" value="High" v-model="highPicked">
+							<label for="one">High</label>
+							<br>
+							<input type="radio" id="two" value="Low" v-model="highPicked">
+							<label for="one">Low</label>
+							<br>
+						</div>
 					</div>
-					<div class="even-form roulette-button">
-						<h3>Even or Odd</h3>
-						<input type="radio" id="one" value="Even" v-model="evenPicked">
-						<label for="one">Even</label>
-						<br>
-						<input type="radio" id="two" value="Odd" v-model="evenPicked">
-						<label for="one">Odd</label>
-						<br>
-					</div>
-					<div class="high-form roulette-button">
-						<h3>High or Low</h3>
-						<input type="radio" id="one" value="High" v-model="highPicked">
-						<label for="one">High</label>
-						<br>
-						<input type="radio" id="two" value="Low" v-model="highPicked">
-						<label for="one">Low</label>
-						<br>
-					</div>
-					</div>
-					<div class="roulette-button wager-forms">
+					<div class="roulette-column radio-forms">
 						<h3>Your Chips</h3>
 						<p>{{chips}}</p>
 						<h3>Wager:</h3>   
@@ -52,7 +52,6 @@
 			</div>
 			<div id="ball" v-bind:class="{ activeBall: isActive }"></div>
 			<h2 v-bind:class="{ activeWinner: updatedStatus }">{{winner}}</h2>
-
 		</div>
 	</div>
 </template>
@@ -250,12 +249,6 @@ export default {
   --rotation: 3600deg;
 }
 
-.roulette-row {
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-}
 .roulette {
 	display: flex;
 	flex-direction: column;
@@ -265,17 +258,64 @@ export default {
 	padding: 20px;
 }
 
-.radio-forms, .wager-forms {
-	box-shadow: 2px 2px 4px #81F092;
-	padding: 10px;
-	margin-bottom: 10px;
-}
 .roulette h2 {
 	opacity: 0;
 	height: 30px;
 	color: #F14285;
 	font-family: 'Monoton', cursive;
 }
+
+.roulette-row {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.roulette-column {
+	font-family: 'Monoton', cursive;
+	width: 140px;
+}
+
+.roulette-column h3, p {
+	margin: 0;
+	color: black!important;
+}
+
+.roulette-column h3 {
+	font-size: 1.05em;
+}
+
+.roulette-column label {
+	font-size: 13px;
+}
+.roulette-column button {
+	padding: 10px;
+	font-family: 'Monoton', cursive;
+	background: #81F092;
+	margin-top: 10px;
+	width: 100px;
+	height: 60px;
+}
+
+.roulette-column button:hover {
+	background: #50C060;
+}
+
+.roulette-column-form {
+	margin-top: 10px;
+}
+
+.roulette-column-buttons {
+	width: 150px;
+}
+
+.radio-forms {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #81F092;
+}
+
 #ball {
 	width: 25px;
 	height: 25px;
@@ -314,39 +354,5 @@ export default {
   100% { opacity: 1; top: 12%; }
 }
 
-.color-form, .even-form, .high-form {
-	margin-top: 10px;
-}
 
-.roulette-button {
-	color: #F14285;
-	font-family: 'Monoton', cursive;
-	width: 140px;
-}
-
-.roulette-button h3, p {
-	margin: 0;
-}
-
-.roulette-button h3 {
-	font-size: 1.05em;
-}
-
-
-.roulette-button label {
-	color: white;
-	font-size: 13px;
-}
-.roulette-button button {
-	padding: 10px;
-	font-family: 'Monoton', cursive;
-	background: #81F092;
-	margin-top: 10px;
-	width: 100px;
-	height: 60px;
-}
-
-.buttons {
-	width: 150px;
-}
 </style>
