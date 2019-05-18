@@ -4,12 +4,9 @@
 		<div class="roulette">
 			<div class="roulette-row">
 				<div class="roulette-column roulette-column-buttons">
-					<button @click="placeBetAdd()">Add</button>
-					<button @click="placeBetAll()">Add All</button>
-					<button @click="placeBetMinus()">Minus</button>
-					<button @click="spin()">Spin</button>
-					<button @click="reset()">Reset</button>
-					<button @click="clear()">Clear</button>
+					<div class="button" v-for="button in buttons" :key="button.index">
+						<button @click="handle(button.method)" :disabled="button.disable">{{button.name}}</button>
+					</div>
 				</div>
 				<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
 				<div class="forms">
@@ -71,6 +68,14 @@ export default {
       updatedStatus: false,
       color: '',
       winner: '',
+      buttons: [
+        { name: 'Add', method: 'placeBetAdd', disable: false },
+        { name: 'Add All', method: 'placeBetAll', disable: false },
+        { name: 'Minus', method: 'placeBetMinus', disable: false },
+        { name: 'Spin', method: 'spin', disable: false },
+        { name: 'Reset', method: 'reset', disable: false },
+        { name: 'Clear', method: 'clear', disable: false }
+      ],
       slots: [
         { number: 32, color: 'red', degree: 350 },
         { number: 15, color: 'black', degree: 341 },
@@ -112,13 +117,19 @@ export default {
     }
   },
   methods: {
+    handle (method) {
+      this[method]()
+    },
     placeBetAdd () {
       if (this.chips === 0) {
         alert('No more chips to place your bet')
+        this.buttons[0].disable = true
+        this.buttons[1].disable = true
       } else {
         this.betAmount += 100
         this.chips -= 100
       }
+      this.buttons[2].disable = false
     },
     placeBetAll () {
       if (this.chips === 0) {
@@ -132,8 +143,11 @@ export default {
       if (this.betAmount > 0) {
         this.betAmount -= 100
         this.chips += 100
+        this.buttons[0].disable = false
+        this.buttons[1].disable = false
       } else {
         alert('Please try again')
+        this.buttons[2].disable = true
       }
     },
     spin () {
@@ -163,6 +177,9 @@ export default {
           this.pickHigh(random)
         }
       }, 2500)
+      setTimeout(() => {
+        this.clear()
+      }, 2600)
     },
     reset () {
       this.isActive = false
@@ -170,6 +187,7 @@ export default {
       this.winner = ''
       this.betAmount = 0
       this.chips = 1000
+      this.buttons[3].disable = false
     },
     clear () {
       this.colorPicked = ''
@@ -180,6 +198,7 @@ export default {
       this.winner = number + ' ' + color + '. You Lose...'
       if (this.chips === 0) {
         alert('Game Over')
+        this.buttons[3].disable = true
       }
     },
     winSpin (number, color) {
@@ -267,7 +286,6 @@ export default {
 
 .roulette-row {
 	display: flex;
-	width: 100%;
 	justify-content: center;
 	align-items: center;
 }
@@ -279,7 +297,6 @@ export default {
 
 .roulette-column h3, p {
 	margin: 0;
-	color: black!important;
 }
 
 .roulette-column h3 {
@@ -288,14 +305,15 @@ export default {
 
 .roulette-column label {
 	font-size: 13px;
+	color: black;
 }
 .roulette-column button {
 	padding: 10px;
 	font-family: 'Monoton', cursive;
 	background: #81F092;
-	margin-top: 10px;
-	width: 100px;
-	height: 60px;
+	margin: 5px;
+	width: 140px;
+	height: 65px;
 }
 
 .roulette-column button:hover {
@@ -316,6 +334,16 @@ export default {
 	background: #81F092;
 }
 
+.radio-forms h3 {
+	color: black;
+}
+.radio-forms p {
+	color: black;
+}
+
+.forms {
+	margin: 5px;
+}
 #ball {
 	width: 25px;
 	height: 25px;
@@ -353,6 +381,5 @@ export default {
   0% { opacity: 0; top: 50%;}
   100% { opacity: 1; top: 12%; }
 }
-
 
 </style>
