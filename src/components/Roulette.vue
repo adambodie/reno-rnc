@@ -40,10 +40,14 @@
 						</div>
 					</div>
 					<div class="roulette-column radio-forms">
+            <div class="chips">
 						<h3>Your Chips</h3>
 						<p>{{chips}}</p>
+            </div>
+            <div class="wager">
 						<h3>Wager:</h3>   
 						<p>{{betAmount}}</p>
+            </div>
 					</div>
 				</div>
 			</div>
@@ -288,11 +292,16 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+  flex-direction: column-reverse;
 }
 
 .roulette-column {
 	font-family: 'Monoton', cursive;
-	width: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2px;
+  width: 295px;
 }
 
 .roulette-column h3, p {
@@ -312,8 +321,9 @@ export default {
 	font-family: 'Monoton', cursive;
 	background: #81F092;
 	margin: 5px;
-	width: 140px;
-	height: 65px;
+	width: 64px;
+	height: 32px;
+  font-size: 9px;
 }
 
 .roulette-column button:hover {
@@ -324,12 +334,9 @@ export default {
 	margin-top: 10px;
 }
 
-.roulette-column-buttons {
-	width: 150px;
-}
+
 
 .radio-forms {
-	padding: 10px;
 	margin-bottom: 10px;
 	background: #81F092;
 }
@@ -341,25 +348,28 @@ export default {
 	color: black;
 }
 
+.chips, .wager {
+  margin: 10px;
+}
 .forms {
 	margin: 5px;
 }
 #ball {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	border-radius: 100%;
 	background-image: radial-gradient(circle, green, black);
 	position: absolute;
 	opacity: 0;
-	top: 50%;
 }
 
 #wheel {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 100%;
   background-image: url('../assets/american-roulette-wheel.gif');
-
+  background-position: center;
+  background-size: cover;
 }
 
 .activeRoulette { 
@@ -379,7 +389,42 @@ export default {
 
 @keyframes ball {
   0% { opacity: 0; top: 50%;}
-  100% { opacity: 1; top: 12%; }
+  100% { opacity: 1; top: 40%; }
 }
 
+@media (min-width: 768px) {
+  .roulette-row {
+    flex-direction: row;
+  }
+  .roulette-column {
+	  font-family: 'Monoton', cursive;
+	  width: 140px;
+    display: inherit
+  }
+  .roulette-column button {
+    font-size: 13px;
+    margin: 5px;
+	  width: 140px;
+	  height: 65px;
+  }
+  .roulette-column-buttons {
+    width: 150px;
+  }
+  #wheel {
+    width: 400px;
+    height: 400px;
+  }
+  #ball {
+	  width: 25px;
+	  height: 25px;
+	  top: 50%;
+  }
+  .radio-forms {
+	  padding: 10px;
+  }  
+  @keyframes ball {
+    0% { opacity: 0; top: 50%;}
+    100% { opacity: 1; top: 12%; }
+  }
+}
 </style>
