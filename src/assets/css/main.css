@@ -104,12 +104,12 @@ video {
     to {color: #FFF4DC;}
 }
 
-@media (min-width: 767px) {
+@media (min-width: 769px) {
     .cover-heading h1 {
         font-size: 3em;
     }
     .story {
-        width: 60%;    
+        width: 75%;    
     }
     .map {
         max-width: 500px;

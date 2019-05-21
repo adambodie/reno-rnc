@@ -15,39 +15,33 @@
 							<h3>Red or Black</h3>
 							<input type="radio" id="one" value="Red" v-model="colorPicked">
 							<label for="one">Red</label>
-							<br>
 							<input type="radio" id="two" value="Black" v-model="colorPicked">
 							<label for="one">Black</label>
-							<br>
 						</div>
 						<div class="roulette-column roulette-column-form">
 							<h3>Even or Odd</h3>
 							<input type="radio" id="one" value="Even" v-model="evenPicked">
 							<label for="one">Even</label>
-							<br>
 							<input type="radio" id="two" value="Odd" v-model="evenPicked">
 							<label for="one">Odd</label>
-							<br>
 						</div>
 						<div class="roulette-column roulette-column-form">
 							<h3>High or Low</h3>
 							<input type="radio" id="one" value="High" v-model="highPicked">
 							<label for="one">High</label>
-							<br>
 							<input type="radio" id="two" value="Low" v-model="highPicked">
 							<label for="one">Low</label>
-							<br>
 						</div>
 					</div>
 					<div class="roulette-column radio-forms">
-            <div class="chips">
+					<div class="chips">
 						<h3>Your Chips</h3>
 						<p>{{chips}}</p>
-            </div>
-            <div class="wager">
+					</div>
+					<div class="wager">
 						<h3>Wager:</h3>   
 						<p>{{betAmount}}</p>
-            </div>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -292,16 +286,16 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  flex-direction: column-reverse;
+	flex-direction: column-reverse;
+	border: 10px groove #F14285;
 }
 
 .roulette-column {
-	font-family: 'Monoton', cursive;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 2px;
-  width: 295px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 2px;
+	width: 295px;
 }
 
 .roulette-column h3, p {
@@ -309,7 +303,9 @@ export default {
 }
 
 .roulette-column h3 {
+	font-family: 'Monoton', cursive;
 	font-size: 1.05em;
+	margin-right: 20px;
 }
 
 .roulette-column label {
@@ -323,17 +319,12 @@ export default {
 	margin: 5px;
 	width: 64px;
 	height: 32px;
-  font-size: 9px;
+	font-size: 9px;
 }
 
 .roulette-column button:hover {
 	background: #50C060;
 }
-
-.roulette-column-form {
-	margin-top: 10px;
-}
-
 
 
 .radio-forms {
@@ -349,7 +340,8 @@ export default {
 }
 
 .chips, .wager {
-  margin: 10px;
+	margin: 10px;
+	font-family: 'Monoton', cursive;
 }
 .forms {
 	margin: 5px;
@@ -389,42 +381,46 @@ export default {
 
 @keyframes ball {
   0% { opacity: 0; top: 50%;}
-  100% { opacity: 1; top: 40%; }
+  100% { opacity: 1; top: 36%; }
 }
-
+input {
+	margin: 0;
+}
 @media (min-width: 768px) {
-  .roulette-row {
-    flex-direction: row;
-  }
-  .roulette-column {
-	  font-family: 'Monoton', cursive;
-	  width: 140px;
-    display: inherit
-  }
-  .roulette-column button {
-    font-size: 13px;
-    margin: 5px;
-	  width: 140px;
-	  height: 65px;
-  }
-  .roulette-column-buttons {
-    width: 150px;
-  }
-  #wheel {
-    width: 400px;
-    height: 400px;
-  }
-  #ball {
-	  width: 25px;
-	  height: 25px;
-	  top: 50%;
-  }
-  .radio-forms {
-	  padding: 10px;
-  }  
-  @keyframes ball {
-    0% { opacity: 0; top: 50%;}
-    100% { opacity: 1; top: 12%; }
-  }
+	.roulette-row {
+		flex-direction: row;
+	}
+	.roulette-column {
+		width: 140px;
+		display: inherit;
+	}
+	.roulette-column h3 {
+		margin-right: 0px;
+	}
+	.roulette-column button {
+		font-size: 13px;
+		margin: 5px;
+		width: 140px;
+		height: 55px;
+	}
+	.roulette-column-buttons {
+		width: 172px;
+	}
+	#wheel {
+		width: 400px;
+		height: 400px;
+	}
+	#ball {
+		width: 25px;
+		height: 25px;
+		top: 50%;
+	}
+	.radio-forms {
+		padding: 10px;
+	}  
+	@keyframes ball {
+		0% { opacity: 0; top: 50%;}
+		100% { opacity: 1; top: 15%; }
+	}
 }
 </style>
