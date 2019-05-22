@@ -8,7 +8,10 @@
 						<button @click="handle(button.method)" :disabled="button.disable">{{button.name}}</button>
 					</div>
 				</div>
+				<div class="wheel-border">
 				<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
+				<div id="ball" v-bind:class="{ activeBall: isActive }"  v-bind:style="'left: ' + left + ';'"></div>
+				</div>
 				<div class="forms">
 					<div class="radio-forms">
 						<div class="roulette-column roulette-column-form">
@@ -45,7 +48,6 @@
 					</div>
 				</div>
 			</div>
-			<div id="ball" v-bind:class="{ activeBall: isActive }"></div>
 			<h2 v-bind:class="{ activeWinner: updatedStatus }">{{winner}}</h2>
 		</div>
 	</div>
@@ -57,6 +59,7 @@ export default {
   data () {
     return {
       rotation: '3600deg',
+      left: '185px',
       chips: 1000,
       betAmount: 0,
       colorPicked: '',
@@ -207,6 +210,7 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
+            this.left = `${185 + i}px`
             let number = x.number
             let color = x.color
             let colorPicked = this.colorPicked
@@ -224,6 +228,7 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
+            this.left = `${185 + i}px`
             let number = x.number
             let color = x.color
             let evenPicked = this.evenPicked
@@ -243,6 +248,7 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
+            this.left = `${185 + i}px`
             let number = x.number
             let color = x.color
             let highPicked = this.highPicked
@@ -264,6 +270,7 @@ export default {
 <style>
 :root {
   --rotation: 3600deg;
+  left: 45%;
 }
 
 .roulette {
@@ -354,6 +361,11 @@ export default {
 	position: absolute;
 	opacity: 0;
 }
+.wheel-border {
+	width: 400px;
+	height: 400px;
+	position: relative;
+}
 
 #wheel {
   width: 300px;
@@ -380,8 +392,8 @@ export default {
 }
 
 @keyframes ball {
-  0% { opacity: 0; top: 50%;}
-  100% { opacity: 1; top: 36%; }
+  0% { opacity: 0; top: 80%;}
+  100% { opacity: 1; top: 10%; }
 }
 input {
 	margin: 0;
@@ -419,8 +431,8 @@ input {
 		padding: 10px;
 	}  
 	@keyframes ball {
-		0% { opacity: 0; top: 50%;}
-		100% { opacity: 1; top: 15%; }
+		0% { opacity: 0; top: 80%;}
+		100% { opacity: 1; top: 10%; }
 	}
 }
 </style>
