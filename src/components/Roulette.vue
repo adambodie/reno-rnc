@@ -1,56 +1,56 @@
 <template>
-	<div class="story">
-		<h1 class="story-heading">Roulette</h1>
-		<div class="roulette">
-			<div class="roulette-row">
-				<div class="roulette-column roulette-column-buttons">
-					<div class="button" v-for="button in buttons" :key="button.index">
-						<button @click="handle(button.method)" :disabled="button.disable">{{button.name}}</button>
-					</div>
-				</div>
-				<div class="wheel-border">
-				<div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
-				<div id="ball" v-bind:class="{ activeBall: isActive }"  v-bind:style="'left: ' + left + ';'"></div>
-				</div>
-				<div class="forms">
-					<div class="radio-forms">
-						<div class="roulette-column roulette-column-form">
-							<h3>Red or Black</h3>
-							<input type="radio" id="one" value="Red" v-model="colorPicked">
-							<label for="one">Red</label>
-							<input type="radio" id="two" value="Black" v-model="colorPicked">
-							<label for="one">Black</label>
-						</div>
-						<div class="roulette-column roulette-column-form">
-							<h3>Even or Odd</h3>
-							<input type="radio" id="one" value="Even" v-model="evenPicked">
-							<label for="one">Even</label>
-							<input type="radio" id="two" value="Odd" v-model="evenPicked">
-							<label for="one">Odd</label>
-						</div>
-						<div class="roulette-column roulette-column-form">
-							<h3>High or Low</h3>
-							<input type="radio" id="one" value="High" v-model="highPicked">
-							<label for="one">High</label>
-							<input type="radio" id="two" value="Low" v-model="highPicked">
-							<label for="one">Low</label>
-						</div>
-					</div>
-					<div class="roulette-column radio-forms">
-					<div class="chips">
-						<h3>Your Chips</h3>
-						<p>{{chips}}</p>
-					</div>
-					<div class="wager">
-						<h3>Wager:</h3>   
-						<p>{{betAmount}}</p>
-					</div>
-					</div>
-				</div>
-			</div>
-			<h2 v-bind:class="{ activeWinner: updatedStatus }">{{winner}}</h2>
-		</div>
-	</div>
+  <div class="story">
+    <h1 class="story-heading">Roulette</h1>
+      <div class="roulette">
+        <div class="roulette-row">
+          <div class="roulette-column roulette-column-buttons">
+            <div class="button" v-for="button in buttons" :key="button.index">
+              <button @click="handle(button.method)" :disabled="button.disable">{{button.name}}</button>
+            </div>
+          </div>
+          <div class="wheel-border">
+            <div id="wheel" v-bind:class="{ activeRoulette: isActive }" v-bind:style="'--rotation: ' + rotation + ';'"></div>
+            <div id="ball" v-bind:class="{ activeBall: isActive }"  v-bind:style="'left: ' + left + ';'"></div>
+          </div>
+          <div class="forms">
+            <div class="radio-forms">
+              <div class="roulette-column roulette-column-form">
+                <h3>Red or Black</h3>
+                <input type="radio" id="one" value="Red" v-model="colorPicked">
+                <label for="one">Red</label>
+                <input type="radio" id="two" value="Black" v-model="colorPicked">
+                <label for="one">Black</label>
+              </div>
+              <div class="roulette-column roulette-column-form">
+                <h3>Even or Odd</h3>
+                <input type="radio" id="one" value="Even" v-model="evenPicked">
+                <label for="one">Even</label>
+                <input type="radio" id="two" value="Odd" v-model="evenPicked">
+                <label for="one">Odd</label>
+              </div>
+              <div class="roulette-column roulette-column-form">
+                <h3>High or Low</h3>
+                <input type="radio" id="one" value="High" v-model="highPicked">
+                <label for="one">High</label>
+                <input type="radio" id="two" value="Low" v-model="highPicked">
+                <label for="one">Low</label>
+              </div>
+            </div>
+            <div class="roulette-column radio-forms">
+              <div class="chips">
+                <h3>Your Chips</h3>
+                <p>{{chips}}</p>
+              </div>
+              <div class="wager">
+                <h3>Wager:</h3>
+                <p>{{betAmount}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 v-bind:class="{ activeWinner: updatedStatus }">{{winner}}</h2>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -59,7 +59,7 @@ export default {
   data () {
     return {
       rotation: '3600deg',
-      left: '185px',
+      left: '',
       chips: 1000,
       betAmount: 0,
       colorPicked: '',
@@ -160,6 +160,7 @@ export default {
         this.isActive = false
         this.updatedStatus = false
         this.winner = ''
+        this.left = (window.innerWidth > 768) ? '185px' : '140px'
       }, 0)
       setTimeout(() => {
         this.isActive = true
@@ -195,6 +196,9 @@ export default {
       this.evenPicked = ''
       this.highPicked = ''
     },
+    setLeft (value) {
+      this.left = (window.innerWidth > 768) ? `${185 + value}px` : `${140 + value}px`
+    },
     loseSpin (number, color) {
       this.winner = number + ' ' + color + '. You Lose...'
       if (this.chips === 0) {
@@ -210,9 +214,8 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            this.left = `${185 + i}px`
-            let number = x.number
-            let color = x.color
+            this.setLeft(i)
+            let { number, color } = x
             let colorPicked = this.colorPicked
             if (colorPicked.toUpperCase() === color.toUpperCase()) {
               this.winSpin(number, color)
@@ -228,9 +231,8 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            this.left = `${185 + i}px`
-            let number = x.number
-            let color = x.color
+            this.setLeft(i)
+            let { number, color } = x
             let evenPicked = this.evenPicked
             if (((number % 2 === 0) && (evenPicked === 'Even')) || ((number % 2 === 1) && (evenPicked === 'Odd'))) {
               this.winSpin(number, color)
@@ -248,9 +250,8 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            this.left = `${185 + i}px`
-            let number = x.number
-            let color = x.color
+            this.setLeft(i)
+            let { number, color } = x
             let highPicked = this.highPicked
             if (((number > 18) && (highPicked === 'High')) || ((number <= 18) && (highPicked === 'Low'))) {
               this.winSpin(number, color)
@@ -268,10 +269,6 @@ export default {
 }
 </script>
 <style>
-:root {
-  --rotation: 3600deg;
-  left: 45%;
-}
 
 .roulette {
 	display: flex;
@@ -333,7 +330,6 @@ export default {
 	background: #50C060;
 }
 
-
 .radio-forms {
 	margin-bottom: 10px;
 	background: #81F092;
@@ -362,8 +358,8 @@ export default {
 	opacity: 0;
 }
 .wheel-border {
-	width: 400px;
-	height: 400px;
+	width: 300px;
+	height: 300px;
 	position: relative;
 }
 
@@ -426,6 +422,10 @@ input {
 		width: 25px;
 		height: 25px;
 		top: 50%;
+	}
+	.wheel-border {
+		width: 400px;
+		height: 400px;
 	}
 	.radio-forms {
 		padding: 10px;
