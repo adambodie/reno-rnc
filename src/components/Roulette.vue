@@ -122,15 +122,16 @@ export default {
       this[method]()
     },
     placeBetAdd () {
+      let { buttons } = this
       if (this.chips === 0) {
         alert('No more chips to place your bet')
-        this.buttons[0].disable = true
-        this.buttons[1].disable = true
+        buttons[0].disable = true
+        buttons[1].disable = true
       } else {
         this.betAmount += 100
         this.chips -= 100
       }
-      this.buttons[2].disable = false
+      buttons[2].disable = false
     },
     placeBetAll () {
       if (this.chips === 0) {
@@ -141,14 +142,15 @@ export default {
       }
     },
     placeBetMinus () {
+      let { buttons } = this
       if (this.betAmount > 0) {
         this.betAmount -= 100
         this.chips += 100
-        this.buttons[0].disable = false
-        this.buttons[1].disable = false
+        buttons[0].disable = false
+        buttons[1].disable = false
       } else {
         alert('Please try again')
-        this.buttons[2].disable = true
+        buttons[2].disable = true
       }
     },
     spin () {
@@ -169,14 +171,15 @@ export default {
         this.rotation = degree + 'deg'
       }, 100)
       setTimeout(() => {
-        if (this.colorPicked !== '') {
-          this.pickColor(random)
+        const { colorPicked, evenPicked, highPicked, pickColor, pickEven, pickHigh } = this
+        if (colorPicked !== '') {
+          pickColor(random)
         }
-        if (this.evenPicked !== '') {
-          this.pickEven(random)
+        if (evenPicked !== '') {
+          pickEven(random)
         }
-        if (this.highPicked !== '') {
-          this.pickHigh(random)
+        if (highPicked !== '') {
+          pickHigh(random)
         }
       }, 2500)
       setTimeout(() => {
@@ -200,27 +203,27 @@ export default {
       this.left = (window.innerWidth > 768) ? `${185 + value}px` : `${140 + value}px`
     },
     loseSpin (number, color) {
-      this.winner = number + ' ' + color + '. You Lose...'
+      this.winner = `${number} ${color}. You Lose...`
       if (this.chips === 0) {
         alert('Game Over')
         this.buttons[3].disable = true
       }
     },
     winSpin (number, color) {
-      this.winner = number + ' ' + color + '. You Win!!!'
+      this.winner = `${number} ${color}. You Win!!!`
       this.chips += (this.betAmount * 2)
     },
     pickColor (random) {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            this.setLeft(i)
+            let { setLeft, colorPicked, winSpin, loseSpin } = this
             let { number, color } = x
-            let colorPicked = this.colorPicked
+            setLeft(i)
             if (colorPicked.toUpperCase() === color.toUpperCase()) {
-              this.winSpin(number, color)
+              winSpin(number, color)
             } else {
-              this.loseSpin(number, color)
+              loseSpin(number, color)
             }
             this.betAmount = 0
           }
@@ -231,13 +234,13 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            this.setLeft(i)
+            let { setLeft, evenPicked, winSpin, loseSpin } = this
             let { number, color } = x
-            let evenPicked = this.evenPicked
+            setLeft(i)
             if (((number % 2 === 0) && (evenPicked === 'Even')) || ((number % 2 === 1) && (evenPicked === 'Odd'))) {
-              this.winSpin(number, color)
+              winSpin(number, color)
             } else if (((number % 2 === 0) && (evenPicked === 'Odd')) || ((number % 2 === 1) && (evenPicked === 'Even'))) {
-              this.loseSpin(number, color)
+              loseSpin(number, color)
             } else {
               this.winner = 'Try Again'
             }
@@ -250,13 +253,13 @@ export default {
       this.slots.map((x, index) => {
         for (let i = -5; i < 6; i++) {
           if (x.degree === random - i) {
-            this.setLeft(i)
+            let { setLeft, highPicked, winSpin, loseSpin } = this
             let { number, color } = x
-            let highPicked = this.highPicked
+            setLeft(i)
             if (((number > 18) && (highPicked === 'High')) || ((number <= 18) && (highPicked === 'Low'))) {
-              this.winSpin(number, color)
+              winSpin(number, color)
             } else if (((number <= 18) && (highPicked === 'High')) || ((number > 18) && (highPicked === 'Low'))) {
-              this.loseSpin(number, color)
+              loseSpin(number, color)
             } else {
               this.winner = 'Try Again'
             }
