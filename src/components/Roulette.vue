@@ -370,7 +370,7 @@ export default {
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  background-image: url('../assets/american-roulette-wheel.gif');
+  background-image: url('../assets/images/american-roulette-wheel.gif');
   background-position: center;
   background-size: cover;
 }
