@@ -17,7 +17,7 @@
 			<p>Lake Tahoe is the largest alpine lake in North America and the second deepest lake in North America behind Crater Lake.</p>
 			<p>Lake Tahoe is the largest lake by volume in the United States outside the Great Lakes.</p>
 			<p>Tahoe gets its name from a Native Washo tribe word "dá'aw," meaning "The Lake."</p>
-			<img src="/src/assets/images/reno-tahoe-map.jpg" class="img-responsive">
+			<img src="https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/images/reno-tahoe-map.jpg" class="img-responsive">
 		</div>
 	</div>
 </div>

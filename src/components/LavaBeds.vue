@@ -23,7 +23,7 @@
 			<p>Other prominent members of the Modoc War include Scarface Charley and Shaknasty Jim.</p>
 			<p>After the Modoc War, the tribe was banished to Indian Territory (now Oklahoma). Today, there are about 800 members of the Modoc Tribe, with about 600 living in Oregon and about 200 living in Oklahoma.</p>
 			<my-video title="captain-jack-video"></my-video>
-			<img src="/src/assets/images/lava-beds-map.jpg" class="map">	
+			<img src="https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/images/lava-beds-map.jpg" class="map">	
 		</div>
 	</div>
 </div>

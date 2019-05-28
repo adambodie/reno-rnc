@@ -22,7 +22,7 @@ Vue.component('my-owl', {
                 <div class="owl-carousel owl-theme">
                     <div class="item" v-for="link in links" :key="link.index">
                         <router-link :to="'/' + link.route" v-bind:title="link.message">
-                                <img :src="'./src/assets/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
+                                <img :src="'https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/thumbnails/adam-' + link.thumbnail + '.jpg'" :alt="'Adam at ' + link.alt">
                                 <h1 class="lazyTitle">{{link.index}}</h1>
                         </router-link>
                     </div>
@@ -55,7 +55,7 @@ Vue.component('my-slick', {
   <slick ref="slick" :options="this.slickOptions" class='carousel-class'> 
     <div v-for="photo in photos" :key="photo.index">
       <div>
-        <img :src="'./src/assets/images/' + photo.name + '.jpg'">
+        <img :src="'https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/images/' + photo.name + '.jpg'">
           <h2>{{photo.title}}</h2>
       </div>
     </div>
@@ -66,10 +66,10 @@ Vue.component('my-video', {
   props: ['title'],
   template: `
     <div class="videos">
-      <video controls="controls" v-bind:poster="'/src/assets/videos/' + title + '.jpg'" style="width:100%" :title="title">
-        <source v-bind:src="'/src/assets/videos/' + title +'.m4v'" type="video/mp4">
-        <source v-bind:src="'/src/assets/videos/' + title +'.webm'" type="video/webm">
-        <source v-bind:src="'/src/assets/videos/' + title +'.ogv'" type="video/ogg">
+      <video controls="controls" v-bind:poster="'https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/videos/' + title + '.jpg'" style="width:100%" :title="title">
+        <source v-bind:src="'https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/videos/' + title +'.m4v'" type="video/mp4">
+        <source v-bind:src="'https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/videos/' + title +'.webm'" type="video/webm">
+        <source v-bind:src="'https://s3-us-west-2.amazonaws.com/reno.bodiewebdesign.com/static/videos/' + title +'.ogv'" type="video/ogg">
       </video>
     </div>`
 })
