@@ -1,27 +1,10 @@
-# reno
+Reno Nice 'n' Cool
+===================
+## Technologies used
+* Vue
 
-> A Vue.js project showcasing pictures from my trip to Reno
+### Version 1
+My first project built in Vue, I created a blog styled photo gallery.
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Version 2
+Building on the Vue basics, I created re-usable components for some parts of my code.
